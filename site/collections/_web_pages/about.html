@@ -1,0 +1,47 @@
+---
+title: About Us
+SEO:
+  description_text: Learn about Rppl's mission to transform meeting experiences
+  prevent_indexing: false
+  share_image:
+team_members:
+  - name: Rasa Salakij
+    title: UX Engineer
+    image: /assets/images/team/rasa.jpeg
+  - name: Jordan Trbuhovic
+    title: Software Engineer
+    image: /assets/images/team/jordan.jpg
+  - name: Lachlan Scown
+    title: CTO & Co-Founder
+    image: /assets/images/team/lachlan.jpg
+  - name: Phil Jones
+    title: Principal Engineer & Co-Founder
+    image: /assets/images/team/phil.jpg
+  - name: Trevor McIntyre
+    title: CEO & Co-Founder
+    image: /assets/images/team/trevor.jpeg
+  - name: Tim Ge
+    title: Software Engineer
+    image: /assets/images/team/tim.jpg
+  - name: Andru Zhang
+    title: Software Engineer
+    image: /assets/images/team/andru.jpg
+---
+
+<div class="sections">
+  <div class="sections__section-backdrop">
+    <div class="sections__section">
+      <div class="content-block content-block--reduced-margin">
+        <div class="content-block__wrapper">
+          {% include components/headings-detailed.html eyebrow_heading="Nice to meet you" heading="Our mission is to transform and enhance the meeting experience" subheading="With Rppl, you can shorten your meeting cycle, focus on what truly matters, and accelerate execution. Maximize the return on your meeting investment by aligning your team quickly, only meeting on key problems, and turning outcomes into actions. Rppl combines the best of asynchronous and synchronous collaboration, using AI to enhance workflows and supercharge your delivery." alignment="Center" %}
+        </div>
+      </div>
+      
+      <div class="content-block">
+        <div class="content-block__wrapper">
+          {% include components/team.html team_members=page.team_members %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

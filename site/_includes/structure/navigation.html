@@ -1,0 +1,161 @@
+{% assign c = 'c-navigation' %}
+
+<!-- This is for small screens—to open a side menu that slides in. -->
+<div class="{{c}}__mobile{% if page.url == '/' %} {{c}}__mobile--inverse{% endif %}">
+  <button
+    id="js-open-navigation"
+    class="{{c}}__open-button"
+    type="button"
+    aria-haspopup="true"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+    aria-label="Open primary navigation"
+  >
+    {% include svg/menu.svg %}
+  </button>
+
+  <a href="#hero" class="{{c}}__brand">
+    <img
+      class="{{c}}__logo {{c}}__logo--mobile"
+      src="/assets/images/radley-small.svg"
+      alt="Radley"
+      width="108"
+      height="32"
+    />
+  </a>
+  <div class="{{c}}__spacer"></div>
+</div>
+
+<div class="nav-overlay"></div>
+
+<nav class="{{c}}" id="primary-navigation" aria-label="Primary">
+  <div class="{{c}}__wrapper">
+    <div class="{{c}}__main-group">
+      <a class="{{c}}__brand {{c}}__brand--desktop" href="#hero">
+        <img
+          class="{{c}}__logo"
+          src="/assets/images/radley-big.svg"
+          alt="Radley"
+          width="148"
+          height="40"
+        />
+      </a>
+
+      <ul
+        class="{{c}}__nav-items"
+        data-home="{% if page.url == '/' %}true{% else %}false{% endif %}"
+      >
+        <li>
+          <a class="{{c}}__nav-link" href="#problem">Problem</a>
+        </li>
+        <li>
+          <a class="{{c}}__nav-link" href="#difference">Radley Difference</a>
+        </li>
+        <li>
+          <a class="{{c}}__nav-link" href="#how-it-works">How It Works</a>
+        </li>
+        <li>
+          <a class="{{c}}__nav-link" href="#team">Team</a>
+        </li>
+        <li>
+          <a class="{{c}}__nav-link" href="#about">About</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="{{c}}__cta-group">
+      {% include components/button.html button_text="Join the Waitlist" button_url="#join"
+      button_variant="Waitlist" open_in_new_tab=false chevron_left=false chevron_right=false %}
+    </div>
+  </div>
+
+  <!-- This is for small screens—to close a side menu that slides out. -->
+  <button
+    id="js-close-navigation"
+    class="c-navigation__close-button"
+    type="button"
+    aria-label="Close primary navigation"
+  >
+    {% include svg/close.svg %}
+  </button>
+</nav>
+
+<script>
+  let isNavOpen = false
+  const navigation = document.querySelector('.c-navigation')
+  const navList = document.querySelector('.c-navigation__nav-items')
+  const mobileNav = document.querySelector('.c-navigation__mobile')
+  const openButton = document.getElementById('js-open-navigation')
+  const closeButton = document.getElementById('js-close-navigation')
+  const navOverlay = document.querySelector('.nav-overlay')
+  let lastFocusTrigger = null
+  const isHomeNav = navList?.dataset.home === 'true'
+
+  const updateBrandTone = () => {
+    if (!isHomeNav || !navList || !navigation) {
+      return
+    }
+
+    const shouldUseInverse = !isNavOpen && window.scrollY <= 40
+    navigation.classList.toggle('c-navigation--inverse', shouldUseInverse)
+
+    if (mobileNav) {
+      mobileNav.classList.toggle('c-navigation__mobile--inverse', shouldUseInverse)
+    }
+  }
+
+  const closeNavigation = () => {
+    isNavOpen = false
+    navigation.classList.remove('c-navigation--open')
+    navOverlay?.classList.remove('nav-overlay--visible')
+    openButton?.setAttribute('aria-expanded', 'false')
+    updateBrandTone()
+    const focusTarget =
+      lastFocusTrigger && lastFocusTrigger instanceof HTMLElement ? lastFocusTrigger : openButton
+    focusTarget?.focus()
+    lastFocusTrigger = null
+  }
+
+  const openNavigation = () => {
+    lastFocusTrigger = document.activeElement
+    navigation.classList.add('c-navigation--open')
+    navOverlay?.classList.add('nav-overlay--visible')
+    isNavOpen = true
+    openButton?.setAttribute('aria-expanded', 'true')
+    updateBrandTone()
+    closeButton?.focus()
+  }
+
+  const toggleScrolledState = () => {
+    if (window.scrollY > 40) {
+      document.body.classList.add('scrolled')
+    } else {
+      document.body.classList.remove('scrolled')
+    }
+
+    updateBrandTone()
+  }
+
+  closeButton?.addEventListener('click', closeNavigation)
+
+  openButton?.addEventListener('click', function () {
+    if (isNavOpen) {
+      closeNavigation()
+    } else {
+      openNavigation()
+    }
+  })
+
+  navOverlay?.addEventListener('click', closeNavigation)
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isNavOpen) {
+      event.preventDefault()
+      closeNavigation()
+    }
+  })
+
+  window.addEventListener('scroll', toggleScrolledState)
+  window.addEventListener('load', toggleScrolledState)
+  window.addEventListener('load', updateBrandTone)
+</script>

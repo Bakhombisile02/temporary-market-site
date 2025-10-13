@@ -1,0 +1,109 @@
+.c-faq {
+  $c: &;
+  width: calc(100% - 20px - 20px);
+  max-width: 1046px;
+  margin: auto;
+
+  @include breakpoint-min {
+    padding: 0 20px;
+
+    .c-faq__headings {
+      margin-left: 0px;
+    }
+  }
+
+  &__more-link {
+    margin-top: 64px;
+
+    .c-button {
+      justify-content: center;
+    }
+  }
+
+  &__headings {
+    margin-left: 80px;
+    margin-bottom: -20px;
+    font-size: 14px;
+
+    .c-headings-detailed .c-heading h1 {
+      font-size: 36px;
+    }
+
+    .c-headings-detailed {
+      margin-top: 0px;
+    }
+  }
+
+  &__faq-items {
+    margin: 64px auto 0 auto;
+    max-width: 768px;
+  }
+
+  &__faq-item {
+    border-bottom: 1px solid var(--grey-200);
+    overflow: hidden;
+
+    &--expanded {
+      #{$c}__answer-page-faq {
+        margin-bottom: 32px;
+      }
+
+      #{$c}__icon-vertical-line {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+          rotateZ(90deg) skew(0deg);
+        transform-style: preserve-3d;
+      }
+    }
+  }
+
+  &__question {
+    position: relative;
+    margin: 24px 0 24px 0;
+    padding-right: 40px;
+    @include eyebrow-heading;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  &__icon {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: var(--grey-400);
+    border: 2px solid var(--grey-400);
+
+    &-horizontal-line {
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      border-radius: 1px;
+      background-color: var(--grey-400);
+    }
+
+    &-vertical-line {
+      position: absolute;
+      width: 2px;
+      height: 12px;
+      border-radius: 1px;
+      background-color: var(--grey-400);
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &__answer {
+    height: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-600);
+    overflow: hidden;
+    cursor: pointer;
+    transition: height 0.3s ease;
+  }
+}

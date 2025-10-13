@@ -1,0 +1,19 @@
+.c-heading {
+  $c: &;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  h1 {
+    margin: 0;
+    @include content-heading;
+  }
+}

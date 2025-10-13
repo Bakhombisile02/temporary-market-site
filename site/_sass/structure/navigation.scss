@@ -1,0 +1,318 @@
+.nav-overlay {
+  position: fixed;
+  z-index: 19;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &--visible {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+  }
+}
+
+.scrolled {
+  .c-navigation {
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 20px 45px -30px rgba(15, 17, 32, 0.4);
+    border-radius: 0;
+    border-color: rgba(151, 119, 201, 0.12);
+
+    a {
+      color: var(--cobalt-900);
+    }
+  }
+
+  .c-navigation__mobile {
+    background-color: rgba(255, 255, 255, 0.97);
+  }
+
+  .c-navigation__open-button {
+    color: var(--cobalt-900);
+  }
+}
+
+.c-navigation {
+  $c: &;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  margin: 0 auto;
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  backdrop-filter: none;
+  border-radius: 28px;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, top 0.2s ease, border-radius 0.2s ease, border-color 0.2s ease;
+
+  @include breakpoint-min {
+  position: fixed;
+    top: 0;
+    left: -300px;
+    margin: 0;
+    padding: 32px;
+    width: 300px;
+    height: 100%;
+    background: var(--base-light);
+    align-items: flex-start;
+    box-sizing: border-box;
+    transition: left 0.1s ease, box-shadow 0.1s ease;
+  }
+
+  // .scrolled & {
+  //   background-color: rgba(255, 255, 255, 1);
+  // }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 48px;
+    border-radius: 40px;
+    max-width: $breakpoint-max;
+
+    @include breakpoint-min {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  &__main-group {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 32px;
+
+    color: var(--base-black);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+
+    @include breakpoint-min {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    min-height: 44px;
+    text-decoration: none;
+    transition: opacity 0.1s ease;
+
+    @include breakpoint-min {
+      margin-bottom: 24px;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: auto;
+    transition: filter 0.15s ease;
+
+    &--mobile {
+      height: 32px;
+    }
+  }
+
+  &__nav-items {
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: flex-start;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+
+    @include breakpoint-min {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+  }
+
+  &__nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--cobalt-900);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: var(--nav-line-height);
+    text-decoration: none;
+    transition: color 0.1s ease;
+
+    @include breakpoint-min {
+      margin: 6px 0 6px -26px;
+      padding: 8px 26px;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--cobalt-900);
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: var(--teal-400);
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+    }
+
+    &:focus-visible {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+    }
+
+    .c-navigation--inverse & {
+      color: var(--base-light);
+
+      &:hover {
+        color: var(--teal-200);
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+      }
+
+      &:focus-visible {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+      }
+    }
+  }
+
+  &__cta-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 16px;
+    flex: 0 0 auto;
+
+    @include breakpoint-min {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+  }
+
+  &--open {
+    left: 0;
+    box-shadow: 25px 0 40px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  &__mobile {
+    display: none;
+    width: 100%;
+    height: 70px;
+
+    @include breakpoint-min {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      // padding: 0 26px;
+
+      position: fixed;
+      z-index: 20;
+      // background-color: var(--base-light);
+    }
+
+    & .c-navigation__brand {
+      margin-bottom: 0;
+    }
+  }
+
+  &__mobile--inverse {
+    .c-navigation__open-button {
+      color: var(--base-light);
+    }
+
+    .c-navigation__logo--mobile {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__spacer {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__open-button {
+    z-index: 10;
+    background: none;
+    border: none;
+    color: var(--cobalt-900);
+    cursor: pointer;
+    margin-left: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+  }
+
+  &__close-button {
+    display: none !important;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 8px;
+    background: none;
+    border: none;
+    color: var(--grey-600);
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+
+    @include breakpoint-min {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.c-navigation__open-button:focus-visible,
+.c-navigation__close-button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(133, 222, 204, 0.35);
+}
+
+
+.c-navigation--inverse {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.c-navigation--inverse .c-navigation__logo {
+  filter: brightness(0) invert(1);
+}
+
+.scrolled .c-navigation__logo {
+  filter: none;
+}

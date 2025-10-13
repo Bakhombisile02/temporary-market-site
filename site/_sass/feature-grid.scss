@@ -1,0 +1,66 @@
+.c-feature-grid {
+  $c: &;
+  display: flex;
+  gap: 64px;
+  padding: 0 32px;
+
+  @include breakpoint-mid {
+    flex-direction: column;
+  }
+
+  &__content {
+    flex: 1 40%;
+
+    @include breakpoint-mid {
+      flex: 1;
+      margin: 0 auto;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    @include breakpoint-min {
+      max-width: 100%;
+      text-align: left;
+    }
+  }
+  &__eyebrow-heading {
+    margin: 0 0 16px 0;
+    @include eyebrow-heading;
+  }
+  &__heading {
+    margin: 0;
+    @include content-heading;
+  }
+  &__subheading {
+    @include subheading;
+  }
+  &__grid {
+    flex: 1 60%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+
+    @include breakpoint-mid {
+      flex-direction: column;
+    }
+  }
+  &__grid-item {
+    flex: 0 0 calc(50% - 12px);
+  }
+  &__icon {
+    margin-bottom: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__item-heading {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__item-content {
+    font-size: var(--content-font-size);
+    line-height: var(--content-line-height);
+  }
+}

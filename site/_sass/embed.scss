@@ -1,0 +1,15 @@
+.c-embed {
+  $c: &;
+  display: block;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    iframe {
+      width: 100%;
+    }
+  }
+}

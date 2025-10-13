@@ -1,0 +1,11 @@
+navigation_items:
+  - title: ''
+    url: /
+    show_in_nav: false
+call_to_action_buttons:
+  - button_text: ''
+    button_url: ""
+    button_variant: ''
+    open_in_new_tab: false
+    chevron_left: false
+    chevron_right: true

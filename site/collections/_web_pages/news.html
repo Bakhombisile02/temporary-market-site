@@ -1,0 +1,25 @@
+---
+title: Recent Posts
+SEO:
+  description_text: View recent blog posts and insights
+  prevent_indexing: false
+  share_image:
+---
+
+<div class="sections">
+  <div class="sections__section-backdrop">
+    <div class="sections__section">
+      <div class="content-block content-block--reduced-margin">
+        <div class="content-block__wrapper">
+          {% include components/headings-detailed.html eyebrow_heading="News" heading="Recent Posts" subheading="The latest industry news, interviews, technologies, and resources." alignment="Center" %}
+        </div>
+      </div>
+      
+      <div class="content-block">
+        <div class="content-block__wrapper">
+          {% include components/recent-posts.html show_recent_posts=true posts_to_show=10 %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

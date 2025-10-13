@@ -1,0 +1,346 @@
+---
+layout: main
+---
+
+<div class="posts">
+  <div class="posts__container">
+    <div class="posts__return-button">
+      <a href="/news" class="button button--plain-text">← News</a>
+    </div>
+
+    {% if page.images.preview_image %}
+    <div class="posts__preview-image">
+      <img src="{{ page.images.preview_image }}" alt="{{ page.title }}" />
+    </div>
+    {% endif %}
+
+    <h1 class="posts__title">{{ page.title }}</h1>
+
+    {% if page.subtitle %}
+    <p class="posts__subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+
+    <div class="posts__meta">
+      {% assign author = site.authors | where: "title", page.author | first %}
+      <div class="posts__author">
+        {% if author and author.image %}
+        <img src="{{ author.image }}" alt="{{ page.author }}" class="posts__author-image" />
+        {% endif %}
+        <span>{{ page.author }}</span>
+      </div>
+      <span class="posts__date">{{ page.date | date: "%B %d, %Y" }}</span>
+    </div>
+
+    {% if page.images.header_image %}
+    <div class="posts__header-image">
+      <img src="{{ page.images.header_image }}" alt="{{page.title}}" />
+    </div>
+    {% endif %}
+
+    <div class="posts__content">
+      {{ content }}
+    </div>
+
+    {% if page.cta %}
+    <div class="posts__cta">
+      <div class="c-support">
+        <div class="c-support__header">{{ page.cta.heading }}</div>
+        <!-- <div class="c-support__subheader">{{ page.cta.subheading }}</div> -->
+        <div class="c-support__content">{{ page.cta.content }}</div>
+        {% include components/button.html button_text=page.cta.button_text button_url=page.cta.button_url
+        button_variant="Secondary"
+        open_in_new_tab=page.cta.open_in_new_tab %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .posts {
+    width: 100%;
+    background: #ffffff;
+  }
+
+  .posts__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px 40px 20px;
+  }
+
+  .posts__return-button {
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+
+  .posts__return-button a {
+    color: #126397;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .posts__return-button a:hover {
+    text-decoration: underline;
+  }
+
+  .posts__preview-image {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .posts__preview-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .posts__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+  }
+
+  .posts__subtitle {
+    font-size: 16px;
+    font-style: italic;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    font-weight: 400;
+  }
+
+  .posts__meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    color: #6b7280;
+  }
+
+  .posts__author,
+  .posts__date {
+    display: flex;
+    align-items: center;
+  }
+
+  .posts__author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+  }
+
+  .posts__author-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .posts__date {
+    font-size: 14px;
+  }
+
+  .posts__header-image {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .posts__header-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .posts__content {
+    font-size: 16px;
+    line-height: 1.5em;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .posts__content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin: 48px 0 24px 0;
+    line-height: 1.3;
+  }
+
+  .posts__content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin: 32px 0 16px 0;
+  }
+
+  .posts__content p {
+    margin-bottom: 24px;
+    line-height: 1.7em;
+
+  }
+
+  .posts__content ul {
+    margin: 24px 0;
+    padding-left: 24px;
+  }
+
+  .posts__content li {
+    margin-bottom: 1em;
+    line-height: 1.5em;
+  }
+
+  .posts__content li::marker {
+    color: #126397;
+    width: 1em;
+    height: 1em;
+    font-size: 1.2em;
+  }
+
+  .posts__content strong {
+    font-weight: 600;
+  }
+
+  .posts__content em {
+    font-style: italic;
+    color: #6b7280;
+  }
+
+  .posts__content a {
+    color: #126397;
+    text-decoration: underline;
+  }
+
+  .posts__content a:hover {
+    color: #3730a3;
+  }
+
+  .posts__content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 32px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .posts__cta {
+    margin-top: 80px;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    text-align: center;
+    color: inherit;
+  }
+
+  .c-support {
+    background-image: url(/assets/images/BG_banner.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: calc(100% - 40px);
+    max-width: 1046px;
+    height: fit-content;
+    min-height: 378px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 67px 97px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .c-support {
+      padding: 43px 9px;
+    }
+  }
+
+  .c-support__header {
+    margin-bottom: -16px;
+    color: var(--grey-700);
+    text-align: center;
+    font-family: Inter;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 45px;
+  }
+
+  .c-support__subheader {
+    color: var(--grey-700);
+    text-align: center;
+    font-family: Inter;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 45px;
+  }
+
+  .c-support__content {
+    color: #F2F4F7;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 39.762px;
+    max-width: 793px;
+    margin: 0px auto;
+  }
+
+  @media (max-width: 768px) {
+    .c-support__content {
+      font-size: 20px;
+    }
+  }
+
+  .c-support .c-button {
+    justify-content: center;
+  }
+
+  .c-support .c-button__label {
+    color: var(--primary-background-color);
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 7px;
+  }
+
+  @media (max-width: 768px) {
+    .posts__container {
+      padding: 40px 16px;
+    }
+
+    .posts__title {
+      font-size: 32px;
+    }
+
+    .posts__content {
+      font-size: 16px;
+    }
+
+    .posts__content h2 {
+      font-size: 28px;
+    }
+
+    .posts__content h3 {
+      font-size: 20px;
+    }
+
+    .posts__cta {
+      margin-top: 60px;
+      padding: 32px 24px;
+    }
+
+    .posts__cta-heading {
+      font-size: 24px;
+    }
+
+    .posts__cta-subheading {
+      font-size: 16px;
+    }
+  }
+</style>

@@ -1,0 +1,151 @@
+.c-media-with-stats {
+  $c: &;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 64px;
+  min-height: 250px;
+  border-radius: 24px;
+  background-color: var(--grey-50);
+  // background: linear-gradient(
+  //   190deg,
+  //   rgba(238, 244, 255, 1) 35%,
+  //   rgba(224, 234, 255, 1) 100%
+  // );
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    pointer-events: none;
+  }
+
+  &--right {
+    flex-flow: row-reverse;
+  }
+
+  @include breakpoint-mid {
+    flex-direction: column;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 64px;
+
+    @include breakpoint-mid {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &__left-block {
+    flex: 1 50%;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -32px;
+      height: 100%;
+      border-right: 1px solid rgba(255, 255, 255, 1);
+
+      @include breakpoint-mid {
+        display: none;
+      }
+    }
+  }
+
+  &__right-block {
+    flex: 1 50%;
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    position: relative;
+    margin-top: 24px;
+
+    img {
+      width: 100%;
+      border-radius: 4px;
+      // border: 1px solid var(--grey-300);
+    }
+  }
+
+  &__content {
+    margin-bottom: 36px;
+    font-size: var(--content-font-size);
+    line-height: var(--content-line-height);
+  }
+
+  &__heading {
+    margin: 0 0 8px 0;
+    @include content-heading;
+  }
+
+  &__subheading {
+    margin: 0 0 16px 0;
+    @include subheading;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  &__stats {
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 40px;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      margin: 36px 0 0 0;
+
+      @include breakpoint-min {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      @include breakpoint-min {
+        align-items: center;
+      }
+    }
+  }
+
+  &__stat-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #344054;
+
+    @include breakpoint-mid {
+      font-size: 24px;
+    }
+  }
+
+  &__stat-label {
+    @include subheading;
+    font-size: 14px;
+  }
+}

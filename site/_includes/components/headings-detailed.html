@@ -1,0 +1,9 @@
+{% assign alignment = include.alignment | slugify %}
+
+<div class="c-headings-detailed c-headings-detailed--{{include.alignment | slugify}}">
+    <div class="c-headings-detailed__headings">
+        <h5 class="c-headings-detailed__eyebrow-heading">{{include.eyebrow_heading}}</h5>
+        {% include components/heading.html heading_alignment=include.alignment heading=include.heading %}
+        <p class="c-headings-detailed__subheading">{{include.subheading}}</p>
+    </div>
+</div>

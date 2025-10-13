@@ -1,0 +1,11 @@
+.c-divider {
+  $c: &;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 80%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+}

@@ -1,0 +1,136 @@
+.c-content-with-image {
+  $c: &;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  max-width: $breakpoint-max;
+  width: calc(100% - 20px - 20px);
+  max-width: 1046px;
+  margin: auto;
+
+  @media (max-width: 720px) {
+    margin: 0px;
+    width: 100%;
+  }
+
+  &__header {
+    color: var(--grey-700);
+    text-align: center;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32.581px;
+
+    @include breakpoint-mobile {
+      width: 221px;
+      align-self: center;
+    }
+  }
+
+  &__content {
+    color: var(--base-black);
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 37px;
+    width: 726px;
+    margin: auto;
+
+    @media (max-width: 774px) {
+      width: 488px;
+      max-width: calc(100% - 20px - 20px);
+    }
+
+    @include breakpoint-mobile {
+      padding: 0 47px;
+      width: calc(100% - 47px - 47px);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin: auto;
+
+    @include breakpoint-min {
+      width: 100%;
+      padding: 0px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 54px;
+    width: fit-content;
+    margin: auto;
+    padding-top: 19px;
+    padding-bottom: 51px;
+    flex-wrap: wrap;
+
+    @media (max-width: 901px) {
+      column-gap: 20px;
+    }
+
+    @media (max-width: 780px) {
+      column-gap: 0px;
+    }
+
+    @media (max-width: 720px) {
+      width: 390px;
+      max-width: 100%;
+      row-gap: 20px;
+      column-gap: 50px;
+    }
+
+    @include breakpoint-min {
+      width: 370px;
+      row-gap: 26px;
+      column-gap: 30px;
+    }
+
+    &-container {
+      width: 100%;
+      margin: auto;
+      background: linear-gradient(to top, #F2F4F7 83.54%, rgba(242, 244, 247, 0.59) 96.22%);
+      margin-top: -80px;
+
+      @include breakpoint-min {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 175px;
+
+    color: var(--grey-700);
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+
+    @media (max-width: 901px) {
+      font-size: 16px;
+      width: 170px;
+    }
+
+    @media (max-width: 720px) {
+      margin: auto;
+    }
+
+    &-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 31px;
+      background: var(--base-light);
+      align-content: center;
+    }
+  }
+}

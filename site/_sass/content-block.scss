@@ -1,0 +1,56 @@
+.c-content-block {
+  $c: &;
+
+  &__eyebrow-heading {
+    margin: 0 0 16px 0;
+    text-align: left;
+
+    @include eyebrow-heading;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__heading {
+    margin: 0 0 28px 0;
+    @include content-heading;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  & > p:first-child {
+    margin-top: 0px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--grey-700);
+  }
+
+  ul {
+    padding: revert;
+    margin: 10px;
+  }
+
+  p,
+  li {
+    margin: 15px 0;
+    font-size: var(--content-font-size);
+    line-height: var(--content-line-height);
+  }
+}

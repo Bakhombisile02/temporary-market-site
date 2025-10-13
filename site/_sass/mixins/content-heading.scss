@@ -1,0 +1,17 @@
+@mixin content-heading {
+  --content-heading-size: 36px;
+  --content-heading-weight: 700;
+  --content-heading-line-height: 122%;
+  font-size: var(--content-heading-size);
+  font-weight: var(--content-heading-weight);
+  line-height: var(--content-heading-line-height);
+  color: var(--grey-700);
+
+  @include breakpoint-mid {
+    --content-heading-size: 32px;
+  }
+
+  @include breakpoint-min {
+    --content-heading-size: 24px;
+  }
+}

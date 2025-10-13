@@ -1,0 +1,29 @@
+
+<div class="c-call-to-action{% if include.light_text %} c-call-to-action--light{% endif %}">
+    <div class="c-call-to-action__wrapper">
+        <div class="c-call-to-action__content">
+            <div class="c-call-to-action__content-wrapper">
+                {% if include.heading %}
+                {% include components/heading.html heading=include.heading %}
+                {% endif %}
+                {% if include.subheading %}
+                <h3 class="c-call-to-action__subheading">{{ include.subheading }}</h3>
+                {% endif %}
+                {% if include.content %}
+                <div class="c-call-to-action__text">
+                    {{ include.content }}
+                </div>
+                {% endif %}
+        {% if include.call_to_action_button_text %}
+        {% include components/button.html button_text=include.call_to_action_button_text
+        button_url=include.call_to_action_button_url
+        button_variant=include.call_to_action_button_variant
+        open_in_new_tab=false %}
+        {% endif %}
+            </div>
+        </div>
+        <div class="c-call-to-action__feature-block">
+            <img src="{{ include.image }}" alt="{{ include.heading | default: 'Example Image' }}" />
+        </div>
+    </div>
+</div>

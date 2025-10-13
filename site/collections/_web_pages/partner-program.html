@@ -1,0 +1,755 @@
+---
+layout: main
+title: Partner Program - Earn Recurring Revenue with Rppl
+SEO:
+  description_text: >
+    Partner with Rppl to earn recurring revenue while helping startups and SMBs transform how they
+    collaborate. Our AI-native platform is built for the future of work, and so is our partner program.
+  prevent_indexing: false
+  share_image: ''
+---
+
+<style>
+  .c-hero-section-wrapper {
+    .c-hero-section {
+      margin-top: 0;
+      background-image: url('/assets/images/partner-program.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      .c-button {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .benefits-section {
+    background: var(--base-light);
+    padding: 80px 0;
+  }
+
+  .benefits-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .benefits-content .c-bullet-list__picture-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 47px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .benefits-content .c-bullet-list__picture-list ul li {
+    width: 200px;
+  }
+
+  .benefits-content .c-bullet-list__picture-list ul li:nth-child(4),
+  .benefits-content .c-bullet-list__picture-list ul li:nth-child(5) {
+    margin-top: 47px;
+  }
+
+  @media (max-width: 768px) {
+    .benefits-content .c-bullet-list__picture-list ul {
+      gap: 35px;
+    }
+
+    .benefits-content .c-bullet-list__picture-list ul li:nth-child(4),
+    .benefits-content .c-bullet-list__picture-list ul li:nth-child(5) {
+      margin-top: 35px;
+    }
+  }
+
+  .benefits-card {
+    background-image: url(/assets/images/BG_banner.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 2px solid var(--cobalt-200);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefits-header {
+    margin-bottom: 40px;
+  }
+
+  .benefits-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--grey-700);
+    margin-bottom: 16px;
+  }
+
+  .benefits-header .subtitle {
+    font-size: 1.25rem;
+    color: #f2f4f7;
+    margin-bottom: 24px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .benefit-item {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--cobalt-200);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+  }
+
+  .benefit-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cobalt-700);
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .benefit-item p {
+    font-size: 1rem;
+    color: var(--grey-700);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .benefit-item .highlight {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cobalt-600);
+    margin-bottom: 8px;
+  }
+
+  .ideal-for-section {
+    background: var(--base-light);
+    padding: 80px 0;
+  }
+
+  .ideal-for-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+    text-align: center;
+  }
+
+  .ideal-for-content h2 {
+    /* font-size: 2.5rem;
+         */
+    font-size: 35px;
+    font-weight: 700;
+    color: #126397;
+    margin-bottom: 48px;
+  }
+
+  .ideal-for-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .ideal-for-item {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 200px;
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .ideal-for-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+  }
+
+  .ideal-for-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--grey-700);
+    margin: 0;
+  }
+
+  .ideal-for-item p {
+    font-size: 1rem;
+    color: var(--grey-600);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .ideal-for-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ideal-for-item {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .section-divider {
+    width: 100%;
+    height: 16px;
+    background: linear-gradient(to right, #7ebbe6, #4ac9c9);
+  }
+
+  .tiers-section {
+    background: var(--grey-100);
+    padding: 80px 0;
+  }
+
+  .tiers-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .tiers-content h2 {
+    /* font-size: 2.5rem;
+         */
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--grey-900);
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .tiers-table {
+    background: var(--base-light);
+    border: 1px solid var(--cobalt-200);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .tiers-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tiers-table th {
+    background: var(--cobalt-600);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .tiers-table td {
+    padding: 20px;
+    border-bottom: 1px solid var(--grey-200);
+    font-size: 1rem;
+    color: var(--grey-700);
+  }
+
+  .tiers-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tier-name {
+    font-weight: 600;
+    color: var(--cobalt-600);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tier-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .commission-range {
+    font-weight: 600;
+    color: var(--theme-color);
+  }
+
+  .earnings-section {
+    background: #d0d5dd;
+    padding: 80px 0;
+  }
+
+  .earnings-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .earnings-content h2 {
+    /* font-size: 2.5rem;
+         */
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--grey-900);
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .earnings-table {
+    background: var(--base-light);
+    border: 1px solid var(--cobalt-200);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .earnings-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .earnings-table th {
+    background: var(--cobalt-600);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .earnings-table td {
+    padding: 20px;
+    border-bottom: 1px solid var(--grey-200);
+    font-size: 1rem;
+    color: var(--grey-700);
+  }
+
+  .earnings-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .earnings-amount {
+    font-weight: 600;
+    color: var(--theme-color);
+  }
+
+  .what-you-get-section {
+    background: var(--base-light);
+    padding: 80px 0;
+  }
+
+  .what-you-get-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+    text-align: center;
+  }
+
+  .what-you-get-content h2 {
+    /* font-size: 2.5rem;
+         */
+    font-size: 35px;
+    font-weight: 700;
+    color: #126397;
+    margin-bottom: 48px;
+  }
+
+  .features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .feature-item {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 200px;
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .feature-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+  }
+
+  .feature-item p {
+    font-size: 1rem;
+    color: var(--grey-600);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .feature-item {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  .final-cta {
+    background-image: url(/assets/images/BG_banner.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: calc(100% - 20px - 20px);
+    max-width: 1046px;
+    height: fit-content;
+    min-height: 378px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 67px 97px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .final-cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .final-cta h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--grey-700);
+    margin: 0;
+    line-height: 45px;
+  }
+
+  .final-cta p {
+    font-size: 24px;
+    color: #f2f4f7;
+    margin: 0;
+    line-height: 39.762px;
+    max-width: 793px;
+    font-weight: 400;
+  }
+
+  .final-cta-wrapper {
+    background: var(--grey-100);
+    padding: 80px 0;
+  }
+
+  .partner-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .partner-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .partner-hero .subtitle {
+      font-size: 1.25rem;
+    }
+
+    .benefits-card {
+      padding: 32px 24px;
+    }
+
+    .benefits-header h2 {
+      font-size: 2rem;
+    }
+
+    .tiers-table,
+    .earnings-table {
+      font-size: 0.875rem;
+    }
+
+    .tiers-table th,
+    .tiers-table td,
+    .earnings-table th,
+    .earnings-table td {
+      padding: 12px;
+    }
+
+    .partner-cta {
+      flex-direction: column;
+    }
+
+    .final-cta {
+      padding: 43px 9px;
+    }
+
+    .final-cta p {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<div class="c-hero-section-wrapper">
+  <div class="c-hero-section">
+    <h1 class="c-hero-section__header">
+      <span class="c-hero-section__header--dark" style="font-size: 76px"
+        >Join the Rppl Partner Program</span
+      >
+      <span class="c-hero-section__header--green" style="color: white; font-size: 76px"
+        >Unlock AI-Native Revenue Streams</span
+      >
+    </h1>
+    <div class="c-hero-section__content">
+      Partner with Rppl to earn recurring revenue while helping startups and SMBs transform how they
+      collaborate. Our AI-native platform is built for the future of work, and so is our partner
+      program.
+    </div>
+    {% include components/button.html button_text="Apply Now" button_url="mailto:david@rppl.com"
+    button_variant="Primary" %}
+  </div>
+</div>
+
+<div class="benefits-section">
+  <div class="benefits-content">
+    <div class="c-bullet-list__picture-list">
+      <ul>
+        <li class="c-bullet-list__picture-list-item">
+          <img src="/assets/images/commisions.svg" alt="" />
+          <span class="c-bullet-list__picture-list-item-text"
+            >Earn up to <strong>25% on commissions</strong> on every seat sold</span
+          >
+        </li>
+        <li class="c-bullet-list__picture-list-item">
+          <img src="/assets/images/Fig1PointSolution.png" alt="" />
+          <span class="c-bullet-list__picture-list-item-text"
+            ><strong>$7K–$130K+ Annual Earnings</strong></span
+          >
+        </li>
+        <li class="c-bullet-list__picture-list-item">
+          <img src="/assets/images/noupfront.png" alt="" />
+          <span class="c-bullet-list__picture-list-item-text"
+            >No upfront fees or minimum sales to start</span
+          >
+        </li>
+        <li class="c-bullet-list__picture-list-item">
+          <img src="/assets/images/early.png" alt="" />
+          <span class="c-bullet-list__picture-list-item-text"
+            ><strong>Early partner bonuses</strong> up to +10% commission</span
+          >
+        </li>
+        <li class="c-bullet-list__picture-list-item">
+          <img src="/assets/images/recurring.png" alt="" />
+          <span class="c-bullet-list__picture-list-item-text"
+            >Recurring revenue that <strong>grows with your clients</strong></span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="ideal-for-section">
+  <div class="ideal-for-content">
+    <h2>Ideal For:</h2>
+    <div class="ideal-for-grid">
+      <div class="ideal-for-item">
+        <img src="/assets/images/agencies.svg" alt="Agencies" />
+
+        <p>Agencies shifting from web & campaign services</p>
+      </div>
+      <div class="ideal-for-item">
+        <img src="/assets/images/advisors.svg" alt="Advisors" />
+
+        <p>Advisors & tech solution providers</p>
+      </div>
+      <div class="ideal-for-item">
+        <img src="/assets/images/it.svg" alt="IT Service Providers" />
+
+        <p>IT service providers supporting SMBs</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="tiers-section">
+  <div class="tiers-content">
+    <h2>Partner Tiers</h2>
+    <div class="tiers-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Seats Sold</th>
+            <th>Commission Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/bronze.svg" alt="Bronze" class="tier-icon" />
+              Bronze
+            </td>
+            <td>0–200</td>
+            <td class="commission-range">15% – 15.75%</td>
+          </tr>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/silver.svg" alt="Silver" class="tier-icon" />
+              Silver
+            </td>
+            <td>201–500</td>
+            <td class="commission-range">16.5% – 18%</td>
+          </tr>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/gold.svg" alt="Gold" class="tier-icon" />
+              Gold
+            </td>
+            <td>501–900</td>
+            <td class="commission-range">18.75% – 21%</td>
+          </tr>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/platinum.svg" alt="Platinum" class="tier-icon" />
+              Platinum
+            </td>
+            <td>901+</td>
+            <td class="commission-range">21.75% – 22.5%+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="earnings-section">
+  <div class="earnings-content">
+    <h2>Example Earnings (USD)</h2>
+    <div class="earnings-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Seats</th>
+            <th>Est. Year 1 Earnings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/bronze.svg" alt="Bronze" class="tier-icon" />
+              Bronze
+            </td>
+            <td>100</td>
+            <td class="earnings-amount">$7,900 – $8,100</td>
+          </tr>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/silver.svg" alt="Silver" class="tier-icon" />
+              Silver
+            </td>
+            <td>300</td>
+            <td class="earnings-amount">$24,900 – $26,700</td>
+          </tr>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/gold.svg" alt="Gold" class="tier-icon" />
+              Gold
+            </td>
+            <td>700</td>
+            <td class="earnings-amount">$68,800 – $73,700</td>
+          </tr>
+          <tr>
+            <td class="tier-name">
+              <img src="/assets/images/platinum.svg" alt="Platinum" class="tier-icon" />
+              Platinum
+            </td>
+            <td>1,000+</td>
+            <td class="earnings-amount">$109,600+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size: 0.9rem; color: var(--grey-600); line-height: 1.6; text-align: center">
+      <strong>Year 2+ Revenue:</strong> Commissions continue in Year 2 and beyond. Earn as long as
+      your clients stay active.
+    </p>
+  </div>
+</div>
+
+<div class="what-you-get-section">
+  <div class="what-you-get-content">
+    <h2>What You Get</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <img src="/assets/images/cobranded.svg" alt="Co-branded Content" />
+        <p>Co-branded content & campaign support to help you sell</p>
+      </div>
+      <div class="feature-item">
+        <img src="/assets/images/deal.svg" alt="Deal Registration" />
+        <p>Deal registration & CRM dashboard to track your pipeline</p>
+      </div>
+      <div class="feature-item">
+        <img src="/assets/images/dedicated.svg" alt="Dedicated Success Team" />
+        <p>Dedicated success team (Silver+ tier) to help you grow</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="download-section" style="background: var(--base-light); padding: 60px 0">
+  <div style="max-width: 1000px; margin: 0 auto; padding: 0 32px; text-align: center">
+    <h2 style="font-size: 2rem; font-weight: 700; color: var(--grey-900); margin-bottom: 24px">
+      Partner Agreement
+    </h2>
+    <p style="font-size: 1.125rem; color: var(--grey-600); margin-bottom: 32px; line-height: 1.6">
+      Download the complete partner agreement to review terms, commission structure, and program
+      details.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap">
+      {% include components/button.html button_text="Download Partner Agreement (PDF)"
+      button_url="https://storage.googleapis.com/rppl-assets/legal/RPPL%20PARTNER%20AGREEMENT.pdf"
+      button_variant="Primary" %} {% include components/button.html button_text="Download Plain
+      English Guide (PDF)"
+      button_url="https://storage.googleapis.com/rppl-assets/legal/RPPL%20PARTNER%20AGREEMENT%20-%20PLAIN%20ENGLISH%20GUIDE.pdf"
+      button_variant="Secondary" %}
+    </div>
+  </div>
+</div>
+
+<div class="final-cta-wrapper">
+  <div class="final-cta">
+    <div class="final-cta-content">
+      <h2>Ready to Join?</h2>
+      <p>The earlier you sign up, the more you earn. Talk to us about your goals today.</p>
+      <div class="partner-cta">
+        {% include components/button.html button_text="Contact Us"
+        button_url="mailto:david@rppl.com" button_variant="Primary" %}
+      </div>
+    </div>
+  </div>
+</div>

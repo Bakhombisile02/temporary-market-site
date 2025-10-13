@@ -1,0 +1,25 @@
+.c-image {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--reduced-top-margin {
+    margin-top: calc(calc(var(--section-padding) / 2) * -1);
+  }
+
+  &--reduced-bottom-margin {
+    margin-bottom: calc(calc(var(--section-padding) / 2) * -1);
+  }
+
+  img {
+    width: auto;
+  }
+}

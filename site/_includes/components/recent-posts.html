@@ -1,0 +1,28 @@
+{% assign item_limit = include.posts_to_show %}
+
+{% if include.show_recent_posts %}
+<div class="c-recent-posts">
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% for post in posts limit: item_limit %}
+    <div class="c-recent-posts__card">
+        {% if post.images.preview_image %}
+        <a class="c-recent-posts__image" href="{{ post.url }}">
+            <img src="{{ post.images.preview_image }}" alt="{{ post.title }}" />
+        </a>
+        {% endif %}
+        <div class="c-recent-posts__content">
+            <p class="c-recent-posts__category">{{ post.post_category }}</p>
+            <h3 class="c-recent-posts__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+
+            <div class="c-recent-posts__text">
+                {% if post.description %}
+                <p>{{ post.description | strip_html | truncate: 250 }}</p>
+                {% endif %}
+            </div>
+
+            {% include components/author-block.html author=post.author date=post.date %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

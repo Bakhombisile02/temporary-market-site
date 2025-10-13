@@ -1,0 +1,36 @@
+.c-table-of-contents {
+  $c: &;
+  &__heading {
+    margin: 8px 0 16px 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-300);
+    color: var(--grey-600);
+  }
+
+  &__list {
+    list-style: none;
+
+    li {
+      line-height: 1.3;
+      font-size: 14px;
+      a {
+        display: block;
+        margin-top: 2px;
+        padding: 2px 0;
+        box-sizing: border-box;
+        color: var(--grey-500);
+
+        &:hover {
+          color: var(--grey-700);
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      li {
+        margin-left: 15px;
+      }
+    }
+  }
+}

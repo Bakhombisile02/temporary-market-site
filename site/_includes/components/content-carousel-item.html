@@ -1,0 +1,20 @@
+
+<div class="c-content-carousel-item">
+    <div class="c-content-carousel-item__img" style="background-image: url({{include.bg_image_url}});">
+        <img src="{{ include.image_url}}" alt="{{ include.image_alt }}" {% if include.image_width %}
+            style="width: {{include.image_width}};" {% endif %} />
+    </div>
+    <div class="c-content-carousel-item__content">
+        <div class="c-content-carousel-item__content-header">{{ include.header }}</div>
+        <div class="c-content-carousel-item__content-detail">{{ include.detail }}</div>
+    {% if include.list_items %}
+    <ul class="c-content-carousel-item__content-list">
+        {% for item in include.list_items %}
+        <li><img src="/assets/icons/blue-tick.svg" /><span>{{ item }}</span></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+        {% include components/button.html button_text="Learn more" button_url="https://my.rppl.app/waitlist?ref=rppl"
+        button_variant="Secondary" open_in_new_tab=false %}
+    </div>
+</div>

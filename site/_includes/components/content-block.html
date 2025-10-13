@@ -1,0 +1,13 @@
+
+{% if include.content_html %}
+<div id="block-{{ include.heading | slugify }}" class="c-content-block">
+    {% if include.eyebrow_heading %}
+    <h5 class="c-content-block__eyebrow-heading c-content-block__eyebrow-heading--{{ include.heading_alignment | slugify }}">{{
+        include.eyebrow_heading }}</h5>
+    {% endif %}
+    {% if include.heading %}
+    <h2 class="c-content-block__heading c-content-block__heading--{{ include.heading_alignment | slugify }}">{{ include.heading }}</h2>
+    {% endif %}
+    {{ include.content_html }}
+</div>
+{% endif %}

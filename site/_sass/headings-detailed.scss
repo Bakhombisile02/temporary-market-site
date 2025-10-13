@@ -1,0 +1,33 @@
+.c-headings-detailed {
+  $c: &;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  margin-top: 65px;
+  width: 100%;
+  max-width: 1024px;
+
+  &--center {
+    align-items: center;
+    text-align: center;
+  }
+
+  &--right {
+    align-items: flex-end;
+  }
+
+  &__eyebrow-heading {
+    margin-bottom: 12px;
+    @include eyebrow-heading;
+    color: #126397;
+  }
+
+  .c-heading h1 {
+    margin: 0 0 16px 0;
+  }
+
+  &__subheading {
+    @include subheading;
+  }
+}

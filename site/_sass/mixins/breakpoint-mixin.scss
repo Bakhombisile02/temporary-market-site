@@ -1,0 +1,23 @@
+@mixin breakpoint-max {
+  @media (max-width: $breakpoint-max) {
+    @content;
+  }
+}
+
+@mixin breakpoint-mid {
+  @media (max-width: $breakpoint-mid) {
+    @content;
+  }
+}
+
+@mixin breakpoint-min {
+  @media (max-width: $breakpoint-min) {
+    @content;
+  }
+}
+
+@mixin breakpoint-mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}

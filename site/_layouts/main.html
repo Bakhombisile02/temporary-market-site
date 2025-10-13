@@ -1,0 +1,34 @@
+---
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+{% assign enable_recaptcha = false %}
+{%- include_cached structure/head.html
+title=page.title
+seo=page.SEO.description_text
+url=page.url
+image=page.SEO.share_image
+index=page.SEO.prevent_indexing -%}
+
+<body class="{% if page.path contains '_posts/' %}posts{% endif %}">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="body-wrapper">
+
+    {% assign url_no_trail = page.url %}
+    {% assign url_with_trail = page.url | append: '/' %}
+
+    <header class="site-header" role="banner">
+      {%- include_cached structure/navigation.html url_no_trail=url_no_trail url_with_trail=url_with_trail -%}
+    </header>
+
+    <main id="main" class="content-wrapper" tabindex="-1">
+      {{ content }}
+    </main>
+
+    {% include_cached structure/footer.html %}
+  </div>
+
+  {%- include_cached structure/scripts.html -%}
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+name: Security Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  functions-security:
+    name: Functions Security
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: functions
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+          cache-dependency-path: functions/package-lock.json
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+      - name: Run unit tests
+        run: npm test
+      - name: Audit production dependencies
+        run: npm audit --production
+
+  jekyll-dependencies:
+    name: Jekyll Dependency Audit
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Install gems
+        run: bundle install --jobs 4 --retry 3
+      - name: Audit gems
+        run: bundle exec bundle audit check --update

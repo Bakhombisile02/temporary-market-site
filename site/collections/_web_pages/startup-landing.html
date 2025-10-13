@@ -1,0 +1,578 @@
+---
+layout: main
+title: Startup Plan - Special Deal for Early-Stage Teams
+SEO:
+  description_text: >
+    Get Rppl for your startup - first 3 months free, then $20/seat/month. Designed for pre-Series A teams
+    under $1M ARR.
+  prevent_indexing: false
+  share_image: ''
+---
+
+<style>
+  .startup-hero {
+    background: linear-gradient(135deg, var(--cobalt-50) 0%, var(--cobalt-100) 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .startup-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/assets/images/background-wave-1.png') no-repeat center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+  }
+
+  .startup-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .startup-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--grey-900);
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .startup-hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--grey-600);
+    margin-bottom: 40px;
+    line-height: 1.4;
+  }
+
+  .startup-hero .description {
+    font-size: 1.125rem;
+    color: var(--grey-700);
+    margin-bottom: 48px;
+    line-height: 1.6;
+  }
+
+  .startup-badge {
+    display: inline-block;
+    background: var(--theme-color);
+    color: var(--grey-900);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .startup-pricing {
+    background: var(--base-light);
+    padding: 80px 0;
+  }
+
+  .startup-pricing-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .pricing-card {
+    background-image: url(/assets/images/BG_banner.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 2px solid var(--cobalt-200);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-header {
+    margin-bottom: 40px;
+  }
+
+  .pricing-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--grey-700);
+    margin-bottom: 16px;
+  }
+
+  .pricing-header .subtitle {
+    font-size: 1.25rem;
+    color: #f2f4f7;
+    margin-bottom: 24px;
+  }
+
+  .pricing-offer {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--cobalt-200);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+    backdrop-filter: blur(10px);
+  }
+
+  .pricing-offer h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cobalt-700);
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .pricing-offer .price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--cobalt-600);
+    margin-bottom: 8px;
+  }
+
+  .pricing-offer .price-note {
+    font-size: 0.875rem;
+    color: var(--grey-500);
+    margin-bottom: 16px;
+  }
+
+  .pricing-offer .seats {
+    font-size: 1rem;
+    color: var(--grey-700);
+    font-weight: 500;
+  }
+
+  .pricing-features {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  .pricing-features h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--grey-700);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #f2f4f7;
+  }
+
+  .feature-list li::before {
+    content: '✅';
+    margin-right: 12px;
+    font-size: 1.125rem;
+  }
+
+  .pricing-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .eligibility-section {
+    background: var(--grey-100);
+    padding: 80px 0;
+  }
+
+  .eligibility-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 32px;
+    text-align: center;
+  }
+
+  .eligibility-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--grey-900);
+    margin-bottom: 32px;
+  }
+
+  .eligibility-criteria {
+    width: 100%;
+    max-width: 1046px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .eligibility-criteria ul {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 0 40px;
+    gap: 47px;
+    list-style: none;
+    margin: 0;
+  }
+
+  .criteria-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .criteria-card img {
+    height: 137px;
+    object-fit: contain;
+  }
+
+  .criteria-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--grey-700);
+    line-height: 30px;
+    margin: 0;
+  }
+
+  .criteria-card p {
+    font-size: 16px;
+    color: var(--grey-600);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 1020px) {
+    .eligibility-criteria ul {
+      margin: auto;
+      max-width: 690px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .eligibility-criteria ul {
+      gap: 48px;
+    }
+  }
+
+  .billing-section {
+    background: var(--base-light);
+    padding: 80px 0;
+  }
+
+  .billing-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 32px;
+    text-align: center;
+  }
+
+  .billing-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--grey-900);
+    margin-bottom: 32px;
+  }
+
+  .billing-options {
+    width: 100%;
+    max-width: 1046px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .billing-options ul {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 0 40px;
+    gap: 47px;
+    list-style: none;
+    margin: 0;
+  }
+
+  .billing-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    gap: 18px;
+    text-align: center;
+    position: relative;
+  }
+
+  .billing-option img {
+    height: 137px;
+    object-fit: contain;
+  }
+
+  .billing-option h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--grey-700);
+    line-height: 30px;
+    margin: 0;
+  }
+
+  .billing-option p {
+    font-size: 16px;
+    color: var(--grey-600);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .billing-option .recommended::before {
+    content: '⭐ Recommended';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cobalt-50);
+    color: var(--cobalt-600);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--cobalt-200);
+  }
+
+  @media (max-width: 1020px) {
+    .billing-options ul {
+      margin: auto;
+      max-width: 690px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .billing-options ul {
+      gap: 48px;
+    }
+  }
+
+  .final-cta {
+    background-image: url(/assets/images/BG_banner.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: calc(100% - 20px - 20px);
+    max-width: 1046px;
+    height: fit-content;
+    min-height: 378px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 67px 97px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .final-cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .final-cta h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--grey-700);
+    margin: 0;
+    line-height: 45px;
+  }
+
+  .final-cta p {
+    font-size: 24px;
+    color: #f2f4f7;
+    margin: 0;
+    line-height: 39.762px;
+    max-width: 793px;
+    font-weight: 400;
+  }
+
+  .final-cta-wrapper {
+    background: var(--grey-100);
+    padding: 80px 0;
+  }
+
+  .limited-spaces {
+    background: var(--theme-color);
+    color: var(--grey-900);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .startup-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .startup-hero .subtitle {
+      font-size: 1.25rem;
+    }
+
+    .pricing-card {
+      padding: 32px 24px;
+    }
+
+    .pricing-header h2 {
+      font-size: 2rem;
+    }
+
+    .eligibility-criteria,
+    .billing-options {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-cta {
+      flex-direction: column;
+    }
+
+    .final-cta {
+      padding: 43px 9px;
+    }
+
+    .final-cta p {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<div class="startup-hero">
+  <div class="startup-hero-content">
+    <div class="startup-badge">🚀 Limited Time Offer</div>
+    <h1>Startup Plan</h1>
+    <p class="subtitle">
+      Designed for early-stage teams who want to move fast—without wasting money on bloated tools.
+    </p>
+    <p class="description">
+      Rppl replaces a stack of tools that could cost you over $200 per seat/month—and gives you more
+      value for a tenth of the cost.
+    </p>
+    <p class="description">
+      <strong>Ideal for teams who are Pre-Series A or under $1M ARR.</strong>
+    </p>
+  </div>
+</div>
+
+<div class="startup-pricing">
+  <div class="startup-pricing-content">
+    <div class="pricing-card">
+      <div class="pricing-header">
+        <h2>🎁 First 3 months free</h2>
+        <p class="subtitle">Full Rppl features, designed for fast-moving teams</p>
+      </div>
+
+      <div class="pricing-offer">
+        <h3>Then</h3>
+        <div class="price">$20/seat/month</div>
+        <p class="price-note">After 3-month free trial</p>
+        <p class="seats">Minimum 5 seats · Maximum 30 seats</p>
+        <p class="seats">(Switch to Base Plan automatically above 30)</p>
+      </div>
+
+      <div class="pricing-features">
+        <h4>What's included:</h4>
+        <ul class="feature-list">
+          <li>All Rppl features (fair use applies)</li>
+          <li>AI-powered meetings & async workflows</li>
+          <li>Smart task tracking, video, transcripts & summaries</li>
+          <li>Replace: Zoom, Otter, Notion, Trello (and more)</li>
+        </ul>
+      </div>
+
+      <div class="pricing-cta">
+        {% include components/button.html button_text="Apply Now"
+        button_url="https://my.rppl.app/waitlist?ref=startup" button_variant="Primary" %} {% include
+        components/button.html button_text="Talk to Sales" button_url="mailto:partners@rppl.app"
+        button_variant="Secondary" %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="eligibility-section">
+  <div class="eligibility-content">
+    <h2>Who's eligible?</h2>
+    <div class="eligibility-criteria">
+      <ul>
+        <li class="criteria-card">
+          <img src="/assets/images/Fig1PointSolution.png" alt="Point Solution" />
+          <h3>Pre-Series A startups</h3>
+          <p>Early-stage companies that haven't raised Series A funding yet</p>
+        </li>
+        <li class="criteria-card">
+          <img src="/assets/images/Fig2CutMeetings.png" alt="Cut Meetings" />
+          <h3>&lt;$1M in ARR</h3>
+          <p>Companies with less than $1 million in annual recurring revenue</p>
+        </li>
+      </ul>
+    </div>
+    <p style="font-size: 1.125rem; color: var(--grey-600); line-height: 1.6">
+      Just verify your business email and provide either your incorporation date or accelerator/VC
+      confirmation.
+    </p>
+  </div>
+</div>
+
+<div class="billing-section">
+  <div class="billing-content">
+    <h2>Billing Options</h2>
+    <div class="billing-options">
+      <ul>
+        <li class="billing-option recommended">
+          <img src="/assets/images/Fig3TrackDecisions.png" alt="Track Decisions" />
+          <h3>Annual upfront</h3>
+          <p>Best value - pay once per year and save on processing fees</p>
+        </li>
+        <li class="billing-option">
+          <img src="/assets/images/Fig4KnowledgeLake.png" alt="Knowledge Lake" />
+          <h3>Quarterly</h3>
+          <p>Pay every 3 months with a small surcharge for flexibility</p>
+        </li>
+      </ul>
+    </div>
+    <p style="font-size: 1.125rem; color: var(--grey-600); line-height: 1.6">
+      <strong>24-month cap on Startup Plan</strong> - after 24 months, you'll automatically
+      transition to our Base Plan.
+    </p>
+  </div>
+</div>
+
+<div class="final-cta-wrapper">
+  <div class="final-cta">
+    <div class="final-cta-content">
+      <div class="limited-spaces">Spaces are limited!</div>
+      <h2>No risk — start free for 3 months</h2>
+      <p>Apply now to lock in this plan while it lasts</p>
+      <div class="pricing-cta">
+        {% include components/button.html button_text="Apply Now"
+        button_url="https://my.rppl.app/waitlist?ref=startup" button_variant="Primary" %} {% include
+        components/button.html button_text="Talk to Sales" button_url="mailto:partners@rppl.app"
+        button_variant="Secondary" %}
+      </div>
+    </div>
+  </div>
+</div>

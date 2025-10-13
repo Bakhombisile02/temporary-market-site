@@ -1,0 +1,83 @@
+.c-support {
+    background-image: url(/assets/images/BG_banner.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: calc(100% - 20px - 20px);
+    max-width: 1046px;
+    height: fit-content;
+    min-height: 378px;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 67px 97px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border-radius: 12px;
+    
+    @include breakpoint-mobile {
+      padding: 43px 9px;
+    }
+
+    &__header {
+      margin-bottom: -16px;
+    }
+
+    &__header,
+    &__subheader {
+      color: var(--grey-700);
+      text-align: center;
+      font-family: Inter;
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 45px;
+    }
+
+    &__content {
+      color: #F2F4F7;
+      text-align: center;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 39.762px;
+      max-width: 793px;
+      margin: 0px auto;
+
+      @include breakpoint-mobile {
+        font-size: 20px;
+      }
+    }
+
+    &__terms {
+      position: absolute;
+      bottom: 8px;
+      right: 20px;
+
+      color: var(--grey-700);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 29px;
+
+      @include breakpoint-min {
+        right: 50%;
+        transform: translateX(50%);
+      }
+    }
+
+    & .c-button {
+      justify-content: center;
+    }
+
+    & .c-button__label {
+      color: var(--primary-background-color);
+      text-align: center;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 7px;
+    }
+}

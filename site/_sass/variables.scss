@@ -1,0 +1,75 @@
+// Breakpoints
+$breakpoint-max: 1280px;
+$breakpoint-mid: 1088px;
+$breakpoint-min: 704px;
+$breakpoint-mobile: 480px;
+
+html {
+  // Colours //
+  --base-light: #ffffff;
+  --base-black: #0b1120;
+  --theme-color: #9777c9;
+  --focus-ring-color: #5b9dd9;
+
+  --cobalt-25: #f8f5ff;
+  --cobalt-50: #f1edff;
+  --cobalt-100: #e3dcff;
+  --cobalt-200: #d0c6f6;
+  --cobalt-300: #baaef0;
+  --cobalt-400: #a493e8;
+  --cobalt-500: #9777c9;
+  --cobalt-600: #7f60b4;
+  --cobalt-700: #624999;
+  --cobalt-800: #4a337d;
+  --cobalt-900: #321e5b;
+  --cobalt-950: #1f1538;
+
+  --teal-200: #b9f0e4;
+  --teal-400: #85decc;
+  --teal-500: #4fc9af;
+  --denim-400: #6395ec;
+  --denim-600: #27567d;
+
+  --grey-25: #fcfcfd;
+  --grey-50: #f9fafb;
+  --grey-100: #f2f4f7;
+  --grey-200: #eaecf0;
+  --grey-300: #d0d5dd;
+  --grey-400: #98a2b3;
+  --grey-500: #667085;
+  --grey-600: #475467;
+  --grey-700: #344054;
+  --grey-800: #1d2939;
+  --grey-900: #101828;
+
+  // Border
+  --border-thin: 1px solid var(--grey-200);
+  --border-300: 1px solid var(--grey-300);
+  --border-primary-600: 1px solid var(--cobalt-600);
+
+  // Transitions
+  --transition-snappy: cubic-bezier(0.55, -0.6, 0.5, 1.5);
+
+  // Buttons
+  --primary-background-color: #0a2a6a;
+  --button-hover-color: #0c357f;
+  --button-border-radius: 10px;
+  --button-border-thickness: 1px;
+  --button-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.1);
+  --button-font-size: 16px;
+
+  --nav-line-height: 20px;
+  --nav-vertical-padding: 18px;
+  --nav-link-vertical-padding: 8px;
+  --nav-total-height: calc(
+    (var(--nav-vertical-padding) * 2) + (var(--nav-link-vertical-padding) * 2) + --nav-line-height
+  );
+
+  // Text
+
+  --content-font-size: 17px;
+  --content-line-height: 140%;
+  --font-base: 'Raleway', 'Lato', sans-serif;
+  --font-body: 'Lato', 'Raleway', sans-serif;
+  --font-display: 'Josefin Sans', 'Raleway', sans-serif;
+}

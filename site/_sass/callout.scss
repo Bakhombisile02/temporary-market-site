@@ -1,0 +1,53 @@
+.c-callout {
+  $c: &;
+  max-width: 700px;
+
+  &__wrapper {
+    position: relative;
+    padding: 14px 55px;
+    border: 1px solid rgba(0, 114, 227, 0.13);
+    border-left: 4px solid #0079f0;
+    border-radius: 4px;
+    background-color: rgba(16, 136, 255, 0.08);
+    box-sizing: border-box;
+
+    &--caution {
+      border: 1px solid rgba(191, 125, 0, 0.13);
+      border-left: 4px solid #ffb87a;
+      background-color: rgba(255, 120, 0, 0.08);
+    }
+
+    &--warning {
+      border: 1px solid rgba(191, 27, 0, 0.13);
+      border-left: 4px solid #ff6353;
+      background-color: rgba(255, 0, 0, 0.08);
+    }
+
+    p,
+    li {
+      font-size: var(--content-font-size);
+      line-height: var(--content-line-height);
+    }
+  }
+
+  &__heading {
+    margin: 0 0 12px 0;
+  }
+
+  &__icon {
+    color: #0079f0;
+
+    &--caution {
+      color: #ffb87a;
+    }
+
+    &--warning {
+      color: #ff6353;
+    }
+
+    svg {
+      position: absolute;
+      left: 16px;
+    }
+  }
+}

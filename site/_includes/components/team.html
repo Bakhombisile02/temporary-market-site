@@ -1,0 +1,50 @@
+
+<div class="c-team">
+    {% if include.eyebrow_heading %}
+    <p class="c-team__eyebrow-heading">{{ include.eyebrow_heading }}</p>
+    {% endif %}
+    {% if include.heading %}
+    <h2 class="c-team__heading">{{ include.heading }}</h2>
+    {% endif %}
+    {% if include.content %}
+    <div class="c-team__content">{{ include.content }}</div>
+    {% endif %}
+
+    {% if include.eyebrow_heading or include.heading or include.content %}
+    {% include components/spacer.html height=96 %}
+    {% endif %}
+
+    {% if include.team_members %}
+    <div id="js-team-{{ section_count }}-{{ block_count }}" class="c-team__team-members">
+        {% for person in include.team_members %}
+        <div class="c-team__team-member">
+            <img src="{{ person.image }}" alt="{{ person.name }}" class="c-team__image">
+            <h4>{{ person.name }}</h4>
+            <p>{{ person.title }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById('js-team-{{ section_count }}-{{ block_count }}');
+        if (container) {
+            const teamMembers = Array.from(container.children);
+
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            const shuffledTeamMembers = shuffle(teamMembers);
+
+            shuffledTeamMembers.forEach(member => container.appendChild(member));
+        }
+        container.classList.add("c-team__team-members--shuffled")
+    });
+</script>

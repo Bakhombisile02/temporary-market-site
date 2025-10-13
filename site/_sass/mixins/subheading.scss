@@ -1,0 +1,9 @@
+@mixin subheading {
+  --subheading-size: 16px;
+  --subheading-weight: 400;
+  --subheading-line-height: 140%;
+  font-size: var(--subheading-size);
+  font-weight: var(--subheading-weight);
+  line-height: var(--subheading-line-height);
+  color: var(--grey-700);
+}

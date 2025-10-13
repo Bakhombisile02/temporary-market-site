@@ -1,0 +1,30 @@
+.c-author-block {
+  $c: &;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &__author-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  &__author-content {
+  }
+
+  &__author-name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--grey-900);
+  }
+
+  &__post-details {
+    color: var(--grey-600);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

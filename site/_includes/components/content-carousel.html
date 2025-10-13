@@ -1,0 +1,87 @@
+
+<div class="c-content-carousel">
+    <div class="c-content-carousel__header">Everything you need. Nothing you don't.</div>
+
+    <!-- Navigation Buttons and Dots -->
+    <div class="c-content-carousel__nav-bar">
+        <div class="c-content-carousel__nav-bar-left">
+            <img src="/assets/icons/chevron-left.svg" alt="left" srcset="">
+        </div>
+        <ul class="c-content-carousel__nav-bar-items-wrapper">
+            <li class="c-content-carousel__nav-bar-item">Async Jams</li>
+            <li class="c-content-carousel__nav-bar-item">AI Summaries</li>
+            <li class="c-content-carousel__nav-bar-item">Task Tracking</li>
+            <li class="c-content-carousel__nav-bar-item">Recurring Jams</li>
+            <li class="c-content-carousel__nav-bar-item">Knowledge Lake</li>
+            <li class="c-content-carousel__nav-bar-item">Integrations</li>
+        </ul>
+        <div class="c-content-carousel__nav-bar-right">
+            <img src="/assets/icons/chevron-right.svg" alt="right" srcset="">
+        </div>
+    </div>
+
+    <div class="c-content-carousel__carousel">
+        {% assign async_items = "Record a short video to be summarized,Measure your team's progress,Skip the conference call,Attach a file for more context" | split: "," %}
+        {% include components/content-carousel-item.html bg_image_url="/assets/images/BG_async.png" image_url="/assets/images/screen_async.png" image_alt="" header="Replace live status meetings" detail="with fast, structured async updates" list_items=async_items %}
+
+        {% assign ai_items = "Actionable tasks are pulled from calls and Jams,Calls are auto-transcribed,Minutes are created for you" | split: "," %}
+        {% include components/content-carousel-item.html bg_image_url="/assets/images/BG_AI.png" image_url="/assets/images/screen_ai.png" image_alt="" image_width="90%" header="AI Summarized Jams and Calls" detail="for information at a glance" list_items=ai_items %}
+
+        {% assign task_items = "Tasks are generated for you from calls or Jams,You can assign tasks to your team,Progress is tracked via our Kanban" | split: "," %}
+        {% include components/content-carousel-item.html bg_image_url="/assets/images/BG_Task.png" image_url="/assets/images/screen_task.png" image_alt="" header="Actions created automatically" detail="No more who's doing what confusion." list_items=task_items %}
+
+        {% assign recurring_items = "Jams that are suited for an ongoing cadence,Replaces frequent meetings with an option in your own time" | split: "," %}
+        {% include components/content-carousel-item.html bg_image_url="/assets/images/BG_recurring.png" image_url="/assets/images/screen_recurring.png" image_alt="" header="Recurring Jams" detail="Have a weekly meeting? Cancel it." list_items=recurring_items %}
+
+        {% assign knowledge_items = "Tasks,Jams,Calls" | split: "," %}
+        {% include components/content-carousel-item.html bg_image_url="/assets/images/BG_knowledge.png" image_url="/assets/images/screen_knowledge.png" image_alt="" image_width="90%" header="Living Knowledge Lake" detail="Search everything your team discusses — in one place." list_items=knowledge_items %}
+
+        {% include components/content-carousel-item.html bg_image_url="/assets/images/BG_Integrations.png" image_url="/assets/images/screen_integrations.png" image_alt="" image_width="65%" header="Integrations" detail="Connects with Microsoft Teams, Zoom, Google Calendar, and more." %}
+    </div>
+</div>
+
+<script>
+    const leftArrow = document.querySelector(".c-content-carousel__nav-bar-left");
+    const rightArrow = document.querySelector(".c-content-carousel__nav-bar-right");
+    const navItems = document.getElementsByClassName("c-content-carousel__nav-bar-item")
+    const carouselItems = document.getElementsByClassName("c-content-carousel-item")
+
+    let currentIndex = 0;
+    let currentNavItem = navItems[0]
+    let carouselItem = carouselItems[0]
+
+    function activeCurrentCarouselItem(index) {
+        currentIndex = index
+
+        currentNavItem.classList.remove("c-content-carousel__nav-bar-item--active")
+        currentNavItem = navItems[index]
+        if (currentNavItem) {
+            currentNavItem.classList.add("c-content-carousel__nav-bar-item--active")
+        }
+
+        carouselItem.classList.remove("c-content-carousel-item--active")
+        carouselItem = carouselItems[index]
+        if (carouselItem) {
+            carouselItem.classList.add("c-content-carousel-item--active")
+        }
+    }
+
+    function moveNext() {
+        const newIndex = (currentIndex + 1) % navItems.length;
+        activeCurrentCarouselItem(newIndex)
+    }
+
+    function movePrev() {
+        const newIndex = currentIndex - 1 <= 0 ? (currentIndex + 6 - 1) % navItems.length : (currentIndex - 1) % navItems.length;
+        activeCurrentCarouselItem(newIndex)
+    }
+
+    activeCurrentCarouselItem(0)
+
+    leftArrow.addEventListener("click", movePrev);
+    rightArrow.addEventListener("click", moveNext);
+
+    Array.from(navItems).forEach((item, index) => {
+        item.addEventListener("click", () => activeCurrentCarouselItem(index));
+    });
+</script>

@@ -1,0 +1,67 @@
+domain_url: 'https://radley.tax'
+url: 'https://radley.tax'
+source: site
+permalink: pretty
+timezone: Pacific/Auckland
+markdown: kramdown
+data_dir: _website_settings
+collections_dir: collections
+uploads_dir: '/images/uploads/:title'
+lang: en
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-local-assign
+  - jekyll-sitemap
+
+autoprefixer:
+  browsers:
+    - last 2 versions
+
+# Bookshop removed - using standard Jekyll includes now
+
+exclude:
+  - node_modules
+
+include:
+  - _cloudcannon # Exposes the live editing data to CloudCannon
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:
+  hidden_pages:
+    output: true
+    permalink: /collection/:title/
+  web_pages:
+  
+    output: true
+    permalink: /:title/
+  authors:
+
+    output: false
+    permalink: /authors/:title/
+  posts:
+  
+    permalink: /posts/:year/:month/:day/:title/
+
+# Array structures for content blocks (no longer using Bookshop)
+_array_structures:
+  content_blocks:
+    style: modal
+
+defaults:
+  - scope:
+      type: web_pages
+      path: _web_pages/index.html
+    values:
+      permalink: /
+  - scope:
+      path: ''
+    values:
+      layout: main
+  - scope:
+      type: posts
+    values:
+      layout: post

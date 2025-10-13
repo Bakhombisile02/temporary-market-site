@@ -1,0 +1,111 @@
+.c-form {
+  $c: &;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 400px;
+    border: none;
+
+    &--grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 800px;
+
+      #{$c}__button-wrapper {
+        grid-column: 1 / -1;
+      }
+    }
+
+    input,
+    textarea {
+      padding: 12px 14px;
+      box-sizing: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: calc(var(--content-font-size) - 2px);
+    }
+
+    fieldset {
+      border: none;
+    }
+  }
+
+  &__input-wrapper,
+  &__textarea-wrapper,
+  &__checkbox-group-wrapper,
+  &__radio-group-wrapper,
+  &__selectbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+    font-size: var(--content-font-size);
+  }
+
+  &__group-label {
+    font-size: var(--content-font-size);
+  }
+
+  &__label-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &--hidden {
+      font-size: 0;
+    }
+  }
+
+  &__checkbox-group-wrapper p,
+  &__checkbox-group-wrapper span {
+    font-size: var(--content-font-size);
+  }
+
+  &__selectbox-wrapper select {
+    padding: 12px 14px;
+    width: max-content;
+    min-width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: calc(var(--content-font-size) - 2px);
+    background-color: var(--base-light);
+    cursor: pointer;
+    color: var(--grey-500);
+  }
+
+  &__divider {
+    display: block;
+    margin: 32px auto;
+    width: 90%;
+    height: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__content p,
+  &__content li {
+    font-size: var(--content-font-size);
+    line-height: var(--content-line-height);
+  }
+
+  &__heading h4 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__hidden-input {
+    display: none;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

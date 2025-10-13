@@ -1,0 +1,343 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.25px rgba(0, 0, 0, 0.1);
+  text-rendering: geometricPrecision;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-color: var(--grey-50);
+}
+
+a {
+  color: var(--denim-600);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-thickness 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -1000px;
+  left: 16px;
+  padding: 12px 16px;
+  z-index: 1000;
+  background-color: var(--base-light);
+  border-radius: 8px;
+  color: var(--grey-900);
+  font-weight: 600;
+}
+
+.skip-link:focus-visible {
+  top: 16px;
+}
+
+body.posts {
+  background-color: #ffffff;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+// CloudCannon Specific
+.cc-editor-link {
+  display: none;
+  padding: 4px 12px !important;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #ddac1b;
+  color: #000 !important;
+  font-size: 14px !important;
+  font-family: Arial;
+  text-transform: none;
+
+  &:hover {
+    background-color: #000000;
+    color: #ddac1b !important;
+  }
+}
+
+.live-site-hidden {
+  display: none;
+}
+
+.cms-editor-active {
+  .live-site-hidden {
+    display: block;
+  }
+}
+
+.page-wrapper {
+  margin: 64px auto 0 auto;
+  padding: 0 32px;
+  max-width: $breakpoint-max;
+}
+
+.content-wrapper {
+  margin-top: var(--nav-total-height);
+  padding-top: var(--nav-total-height);
+}
+
+.sections {
+  --section-padding: 144px;
+  @include breakpoint-max {
+    --section-padding: 144px;
+  }
+  @include breakpoint-mid {
+    $section-padding: 112px;
+    --section-padding: 112px;
+  }
+  @include breakpoint-min {
+    $section-padding: 64px;
+    --section-padding: 64px;
+  }
+
+  &__section-backdrop {
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &:first-of-type .content-block {
+      margin-top: 0;
+      padding-top: 60px;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $breakpoint-max;
+    overflow: hidden;
+
+    // Spacing between content blocks in a section
+    & > * {
+      margin-bottom: calc(var(--section-padding) * 0.5);
+      margin-top: calc(var(--section-padding) * 0.5);
+    }
+
+    // Remove space between adjacent sections
+    & + & {
+      margin-top: calc(var(--section-padding) * -1);
+    }
+
+    &--overflow {
+      max-width: none;
+    }
+  }
+}
+
+.content-block {
+  &--reduced-margin {
+    margin-bottom: 60px;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: block;
+  }
+}
+
+// Layouts
+.posts {
+  $c: &;
+  .c-author-block {
+    margin-bottom: 32px;
+  }
+
+  &__header-image {
+    margin-top: 32px;
+    img {
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    max-width: 1000px;
+    @include content-heading;
+  }
+
+  .sections {
+    &__section-backdrop {
+      padding-left: 0;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    gap: 32px;
+
+    @include breakpoint-mid {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    max-width: none;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--grey-700);
+      margin: 24px 0 16px 0;
+    }
+
+    p {
+      margin: 16px 0;
+      font-size: var(--content-font-size);
+      line-height: var(--content-line-height);
+      color: var(--grey-600);
+    }
+
+    ul,
+    ol {
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: var(--content-font-size);
+      line-height: var(--content-line-height);
+      color: var(--grey-600);
+    }
+  }
+
+  &__toc {
+    position: sticky;
+    z-index: 2;
+    top: 32px;
+    margin-top: 122px;
+    padding: 16px 16px 32px 16px;
+    flex: 1 350px;
+    border: 1px solid var(--grey-300);
+    width: 100%;
+    min-width: 240px;
+    height: max-content;
+    border-radius: 16px;
+    background-color: var(--base-light);
+    box-sizing: border-box;
+
+    @include breakpoint-mid {
+      display: none;
+    }
+  }
+}
+
+.footer {
+  padding: 40px 24px;
+  background-color: var(--cobalt-950);
+  color: var(--grey-25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: inline-flex;
+    }
+  }
+
+  &__link {
+    color: var(--grey-25);
+
+    &:hover {
+      color: var(--teal-400);
+    }
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--grey-25);
+    letter-spacing: 0.04em;
+  }
+
+  &__logo {
+    display: block;
+    height: 42px;
+    width: auto;
+  }
+
+  &__disclaimer {
+    margin: 0;
+    max-width: 520px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  &__disclaimer-link {
+    color: var(--grey-25);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--teal-400);
+
+    &:hover {
+      color: var(--teal-300);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--teal-200);
+      outline-offset: 3px;
+    }
+  }
+
+  &__copyright-text {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}

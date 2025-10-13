@@ -1,0 +1,100 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta
+    name="description"
+    content="{% if page.SEO.description_text %}{{ page.SEO.description_text }}{% else %}{{ site.data.general_settings.search_engine_optimisation.site_description_text }}{% endif %}"
+  />
+  <meta
+    name="keywords"
+    content="{{ site.data.general_settings.search_engine_optimisation.site_keywords }}"
+  />
+  {% if page.SEO.prevent_indexing %}
+  <meta name="robots" content="noindex, nofollow, noimageindex" />
+  <meta name="googlebot" content="noindex" />
+  <meta name="googlebot-news" content="nosnippet" />
+  {% else %}
+  <meta name="robots" content="index, follow" />
+  {% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="preload"
+    as="font"
+    href="{{ site.baseurl }}/assets/fonts/Lato-Regular.ttf"
+    type="font/ttf"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    as="font"
+    href="{{ site.baseurl }}/assets/fonts/Lato-Bold.ttf"
+    type="font/ttf"
+    crossorigin
+  />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+  <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/radley-small.svg" />
+  <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/images/radley-small.svg" />
+  <link rel="canonical" href="{{ site.domain_url }}{{ page.url }}" />
+
+  <title>{% if page.title %}{{ page.title }} | {% endif %}Radley</title>
+
+  {% assign image_check = page.SEO.share_image | size %}
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  {% if site.domain_url %}
+  <meta property="og:url" content="{{ site.domain_url }}{{ page.url }}" />
+  {% endif %}
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta
+    property="og:description"
+    content="{% if page.SEO.description_text %}{{ page.SEO.description_text }}{% else %}{{ site.data.general_settings.search_engine_optimisation.site_description_text }}{% endif %}"
+  />
+  {% if site.domain_url %}
+  <meta
+    property="og:image"
+    content="{{ site.domain_url }}{% if image_check > 2 %}{{ page.SEO.share_image }}{% else %}{{ site.data.general_settings.search_engine_optimisation.website_preview_image }}{% endif %}"
+  />
+  {% else %}
+  <meta
+    property="og:image"
+    content="{% if image_check > 2 %}
+                            {{ page.SEO.share_image }}
+                          {% else %}
+                              {{ site.data.general_settings.search_engine_optimisation.website_preview_image }}
+                          {% endif %}"
+  />
+  {% endif %}
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  {% if site.domain_url %}
+  <meta property="twitter:url" content="{{ site.domain_url }}{{ page.url }}" />
+  {% endif %}
+  <meta property="twitter:title" content="{{ page.title }}" />
+  <meta
+    property="twitter:description"
+    content="{% if page.SEO.description_text %}{{ page.SEO.description_text }}{% else %}{{ site.data.general_settings.search_engine_optimisation.site_description_text }}{% endif %}"
+  />
+  {% if site.domain_url %}
+  <meta
+    property="twitter:image"
+    content="{{ site.domain_url }}{% if image_check > 2 %}{{ page.SEO.share_image }}{% else %}{{ site.data.general_settings.search_engine_optimisation.website_preview_image }}{% endif %}"
+  />
+  {% else %}
+  <meta
+    property="twitter:image"
+    content="{% if image_check > 2 %}
+                  {{ page.SEO.share_image }}
+                {% else %}
+                  {{ site.data.general_settings.search_engine_optimisation.website_preview_image }}
+                {% endif %}"
+  />
+  {% endif %} {% include firebase.html %}
+</head>

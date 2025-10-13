@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.scss": "scss",
+    "*.html": "liquid"
+  },
+
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid"
+  }
+}

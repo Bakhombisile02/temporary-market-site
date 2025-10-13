@@ -1,0 +1,45 @@
+<!-- Configure Firebase app here -->
+
+<!-- Google analytics -->
+
+<!-- Google tag (gtag.js) -->
+<script>
+  ;(function () {
+    window.dataLayer = window.dataLayer || []
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments)
+    }
+
+    const loadAnalytics = () => {
+      if (window.__radleyAnalyticsLoaded) {
+        return
+      }
+
+      window.__radleyAnalyticsLoaded = true
+
+      const script = document.createElement('script')
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-NB2NH0LMW2'
+      script.async = true
+      script.onload = () => {
+        window.gtag('js', new Date())
+        window.gtag('config', 'G-NB2NH0LMW2', { anonymize_ip: true })
+      }
+
+      document.head.appendChild(script)
+    }
+
+    const triggerEvents = ['click', 'scroll', 'keydown', 'pointerdown', 'touchstart']
+
+    const startLoading = () => {
+      triggerEvents.forEach((eventName) =>
+        window.removeEventListener(eventName, startLoading, passiveOptions)
+      )
+      loadAnalytics()
+    }
+
+    const passiveOptions = { once: true, passive: true }
+    triggerEvents.forEach((eventName) =>
+      window.addEventListener(eventName, startLoading, passiveOptions)
+    )
+  })()
+</script>

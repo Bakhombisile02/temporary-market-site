@@ -1,0 +1,52 @@
+{
+  "hosting": {
+    "site": "",
+    "public": "_site",
+    "predeploy": "bash build.sh",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/posts/2025/05/19/finding-focus-in-the-age-of-infinite-interruption/",
+        "destination": "/posts/2025/06/19/finding-focus-in-the-age-of-infinite-interruption/",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/pipedrive/waitlist",
+        "function": "pipedriveWaitlist"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Strict-Transport-Security",
+            "value": "max-age=63072000; includeSubDomains; preload"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "geolocation=(), camera=(), microphone=()"
+          }
+        ]
+      }
+    ]
+  }
+}

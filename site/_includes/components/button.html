@@ -1,0 +1,45 @@
+{% assign variant = include.button_variant | default: 'primary' | slugify %} {% assign is_submit =
+include.type == 'submit' %} {% assign has_layers = variant == 'primary' or variant == 'waitlist' %}
+{% capture label_content %}
+<span class="c-button__label{% if include.chevron_left %} c-button__label--chev-l{% endif %}">
+  {{ include.button_text }} {% if include.chevron_left or include.chevron_right %}
+  <span
+    class="c-button__chevron{% if include.chevron_left %} c-button__chevron--left{% endif %}"
+    aria-hidden="true"
+    >{% include icons/arrow-right-small.svg %}</span
+  >
+  {% endif %}
+</span>
+{% endcapture %}
+
+<div class="c-button{% if is_submit %} c-button--submit{% endif %}">
+  {% if is_submit %}
+  <button type="submit" class="c-button__inner c-button__inner--{{variant}}">
+    {% if has_layers %}
+    <span class="c-button__shadow" aria-hidden="true"></span>
+    <span class="c-button__edge" aria-hidden="true"></span>
+    <span class="c-button__front"> {{ label_content | strip }} </span>
+    {% else %} {{ label_content | strip }} {% endif %}
+  </button>
+  {% else %}
+  <a
+    class="c-button__inner c-button__inner--{{variant}}"
+    href="{{ include.button_url | default: '#' }}"
+    {%
+    if
+    include.open_in_new_tab
+    %}
+    target="_blank"
+    rel="noopener"
+    {%
+    endif
+    %}
+  >
+    {% if has_layers %}
+    <span class="c-button__shadow" aria-hidden="true"></span>
+    <span class="c-button__edge" aria-hidden="true"></span>
+    <span class="c-button__front"> {{ label_content | strip }} </span>
+    {% else %} {{ label_content | strip }} {% endif %}
+  </a>
+  {% endif %}
+</div>

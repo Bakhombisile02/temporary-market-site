@@ -1,0 +1,163 @@
+.c-bullet-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 46px;
+
+  color: var(--base-black);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 37px;
+  text-align: center;
+
+  @include breakpoint-min {
+    row-gap: 24px;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  &__header {
+    width: 491px;
+    margin: auto;
+
+    color: var(--grey-700);
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 42px;
+
+    @include breakpoint-min {
+      line-height: 45px;
+    }
+
+    @include breakpoint-mobile {
+      font-size: 30px;
+      width: 265px;
+    }
+  }
+
+  &__content {
+    width: 579px;
+    margin: auto;
+
+    @include breakpoint-min {
+      padding: 0 76px;
+      width: calc(100% - 76px - 76px);
+    }
+  }
+
+  &__bullet-list {
+    width: 100%;
+    max-width: 1046px;
+    border-radius: 25px;
+    background: var(--base-light);
+    margin: auto;
+    padding: 27px 20px 33px 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint-mid {
+      margin: 0 20px;
+      width: calc(100% - 20px - 20px);
+    }
+
+    &-header {
+      margin-bottom: 21px;
+
+      @include breakpoint-min {
+        font-size: 21px;
+        text-align: center;
+      }
+    }
+
+    & ul {
+      list-style: none;
+      display: flex;
+      flex-flow: wrap;
+      row-gap: 21px;
+      margin-bottom: 32px;
+      justify-content: center;
+      width: 100%;
+
+      @include breakpoint-min {
+        justify-content: center;
+      }
+
+      @include breakpoint-mobile {
+        row-gap: 17px;
+        margin-bottom: 28px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      width: 330px;
+
+      @include breakpoint-mobile {
+        font-size: 17px;
+        line-height: 30px;
+      }
+    }
+
+    &-icon {
+      width: 33px;
+      height: 33px;
+      fill: #4AC9C9;
+    }
+  }
+
+  &__picture-list {
+    width: 100%;
+    max-width: 1046px;
+    margin: auto;
+
+    & ul {
+      display: flex;
+      flex-direction: row;
+      flex-flow: wrap;
+      justify-content: center;
+      padding: 0 40px;
+      gap: 47px;
+
+      @media (max-width: 1020px) {
+        margin: auto;
+        max-width: 690px;
+      }
+
+      @include breakpoint-min {
+        gap: 35px;
+      }
+
+      @include breakpoint-mobile {
+        gap: 48px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      gap: 18px;
+
+      @include breakpoint-mobile {
+        gap: 29px;
+      }
+
+      & img {
+        height: 137px;
+        object-fit: contain;
+      }
+
+      &-text {
+        color: var(--grey-700);
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+  }
+}

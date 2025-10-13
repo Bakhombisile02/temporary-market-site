@@ -1,0 +1,12 @@
+
+<div class="c-author-block">
+    {%- assign author_relative_url = include.author | prepend: '_authors/' | append: ".md" -%}
+    {%- assign author_data = site.authors | where: 'relative_path', author_relative_url | first -%}
+    {% if author_data %}
+    <img class="c-author-block__author-image" src="{{ author_data.image }}" alt="{{author_data.title}}" />
+    {% endif %}
+    <div class="c-author-block__author-content">
+        <p class="c-author-block__author-name">{{author_data.title}}</p>
+        <p class="c-author-block__post-details">{{ include.date | date: "%-d/%-m/%Y" }}</p>
+    </div>
+</div>

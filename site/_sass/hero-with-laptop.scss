@@ -1,0 +1,48 @@
+.c-hero-with-laptop {
+  $c: &;
+  display: flex;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex: 1 50%;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 615px;
+
+    .c-button {
+      margin-top: 32px;
+    }
+  }
+
+  &__subheading {
+    margin: 24px 0 0 0;
+  }
+
+  &__text {
+    margin-top: 24px;
+    font-size: var(--content-font-size);
+    line-height: var(--content-line-height);
+  }
+
+  &__image {
+    position: relative;
+    flex: 1 50%;
+    height: 710px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: auto;
+      height: 100%;
+    }
+  }
+}

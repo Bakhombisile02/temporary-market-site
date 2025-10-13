@@ -1,0 +1,18 @@
+.c-status-block {
+  $c: &;
+  display: block;
+  width: 100%;
+
+  &__inner {
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__green-status {
+    height: 24px;
+    width: 24px;
+  }
+}

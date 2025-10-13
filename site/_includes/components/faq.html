@@ -1,0 +1,53 @@
+
+<div class="c-faq">
+    <div class="c-faq__headings">
+        {% include components/headings-detailed.html eyebrow_heading=include.eyebrow_heading heading=include.heading
+        subheading=include.subheading alignment='center' %}
+    </div>
+    <div id="js-{{section_count}}-{{block_count}}" class="c-faq__faq-items">
+        {% for item in include.faq_items %}
+        <div class="c-faq__faq-item">
+            <h5 class="c-faq__question">{{item.question}}
+
+                <div class="c-faq__icon">
+                    <div class="c-faq__icon-horizontal-line"></div>
+                    <div class="c-faq__icon-vertical-line"></div>
+                </div>
+            </h5>
+            <div class="c-faq__answer">
+                {{item.answer}}
+                {% include components/spacer.html height=32 %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% if include.more_faqs_link_text %}
+    <div class="c-faq__more-link">
+        {% include components/button.html button_text=include.more_faqs_link_text
+        button_url=include.more_faqs_link_url button_variant="Secondary"
+        open_in_new_tab=false %}
+    </div>
+    {% endif %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const faqElement = document.getElementById('js-{{section_count}}-{{block_count}}');
+
+        const toggleAccordion = (e) => {
+            const parent = e.target.closest('.c-faq__faq-item');
+            const answer = parent.querySelector('.c-faq__answer');
+            const isExpanded = parent.classList.toggle('c-faq__faq-item--expanded');
+
+            if (!answer.hasAttribute('data-height')) {
+                answer.setAttribute('data-height', answer.scrollHeight);
+            }
+
+            answer.style.height = isExpanded ? `${answer.getAttribute('data-height')}px` : '0';
+        };
+
+        faqElement.querySelectorAll('.c-faq__question').forEach(item => {
+            item.addEventListener('click', toggleAccordion);
+        });
+    });
+</script>

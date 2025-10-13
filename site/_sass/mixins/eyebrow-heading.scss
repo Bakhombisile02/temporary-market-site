@@ -1,0 +1,13 @@
+@mixin eyebrow-heading {
+  --eyebrow-heading-size: 18px;
+  --eyebrow-heading-weight: 600;
+  --eyebrow-heading-line-height: 120%;
+  font-size: var(--eyebrow-heading-size);
+  font-weight: var(--eyebrow-heading-weight);
+  line-height: var(--eyebrow-heading-line-height);
+  color: var(--grey-700);
+
+  @include breakpoint-min {
+    --eyebrow-heading-size: 16px;
+  }
+}

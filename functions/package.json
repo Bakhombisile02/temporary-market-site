@@ -1,0 +1,16 @@
+{
+  "name": "marketing-site-functions",
+  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "firebase-functions": "^4.6.0"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

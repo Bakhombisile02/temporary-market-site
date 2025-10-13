@@ -1,0 +1,10 @@
+Colours:
+
+Primary Purple: #9777C9
+Secondary Turqoise: #85DECC Electric Blue: #6395EC Denim: #27567D Aqua blue: #91CFE4
+
+Fonts:
+
+Raleway
+Josephine
+Lato
