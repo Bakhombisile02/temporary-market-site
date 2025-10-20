@@ -1,4 +1,7 @@
 {
+  "functions": {
+    "source": "functions"
+  },
   "hosting": {
     "site": "",
     "public": "_site",
@@ -14,7 +17,11 @@
     "rewrites": [
       {
         "source": "/api/pipedrive/waitlist",
-        "function": "pipedriveWaitlist"
+        "function": "pipedriveWaitlistPublic"
+      },
+      {
+        "source": "/api/eligibility/submit",
+        "function": "eligibilitySubmissionPublic"
       },
       {
         "source": "**",

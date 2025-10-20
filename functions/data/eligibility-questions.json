@@ -1,0 +1,102 @@
+{
+  "helperOptions": {
+    "entityTypes": [
+      "Ltd company",
+      "Pty Ltd",
+      "CCPC",
+      "LLC",
+      "PLC",
+      "Sole trader",
+      "Partnership",
+      "Other"
+    ],
+    "records": ["Git", "Design docs", "Experiment logs", "Timesheets", "Test reports", "Other"],
+    "rights": ["Own IP", "Freedom to operate", "Contracted R&D but retain rights", "Other"]
+  },
+  "countries": [
+    {
+      "name": "New Zealand",
+      "slug": "new-zealand",
+      "cities": ["Auckland", "Wellington", "Christchurch", "Hamilton", "Other"],
+      "questions": [
+        "Is your business based in New Zealand, and are your core R&D activities carried out within New Zealand? (Yes/No)",
+        "Does your R&D project aim to solve a scientific or technological problem that isn’t already solved or readily known? (Yes/No)",
+        "Will your business own the results of the R&D, or be able to use the outcomes freely at no extra cost? (Yes/No)",
+        "Is your organisation a privately owned business, not a government research institute, public university, charity, or similar public entity? (Yes/No)",
+        "Do you maintain documentation or records of your R&D activities, for example tracking progress in a Git repository or similar project logs? (Yes/No)"
+      ]
+    },
+    {
+      "name": "Australia",
+      "slug": "australia",
+      "cities": ["Sydney", "Melbourne", "Brisbane", "Perth", "Other"],
+      "questions": [
+        "Is your business based in Australia, and are your core R&D activities carried out within Australia? (Yes/No)",
+        "Does your R&D project aim to solve a scientific or technological problem that isn’t already solved or readily known? (Yes/No)",
+        "Will your business own the results of the R&D, or have the freedom to use the outcomes at no extra cost? (Yes/No)",
+        "Is your organisation an eligible R&D entity, for example a company subject to Australian tax, not an individual, partnership, or tax exempt entity? (Yes/No)",
+        "Do you maintain documentation or records of your R&D activities, for example project plans, experiment results, code repositories? (Yes/No)"
+      ]
+    },
+    {
+      "name": "Singapore",
+      "slug": "singapore",
+      "cities": ["Singapore", "Other"],
+      "questions": [
+        "Is your business based in Singapore, and are your core R&D activities conducted within Singapore? (Yes/No)",
+        "Does your R&D project aim to achieve a scientific or technological advance that is not already available or readily known? (Yes/No)",
+        "Will your company bear the R&D costs and effectively own or have rights to commercially use the results of the R&D? (Yes/No)",
+        "Is your organisation a profit seeking company, not a government agency, charity, or other entity that does not pay corporate tax? (Yes/No)",
+        "Do you maintain documentation or records of your R&D work, for example project logs, experiment results, design documents? (Yes/No)"
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "slug": "united-kingdom",
+      "cities": ["London", "Manchester", "Edinburgh", "Belfast", "Other"],
+      "questions": [
+        "Is your business a UK company subject to UK Corporation Tax, and are your R&D activities carried out primarily within the UK? (Yes/No)",
+        "Does your R&D project seek to make a scientific or technological advance that is not already publicly known or readily deducible? (Yes/No)",
+        "Will your company own the intellectual property or results of the R&D, or at least have the freedom to use the results without additional cost? (Yes/No)",
+        "Is your organisation a trading company, not a public research institute, charity, or similar entity, that can claim Corporation Tax relief? (Yes/No)",
+        "Do you maintain documentation or records of your R&D projects, such as design documents, test results, technical reports, to support a potential claim? (Yes/No)"
+      ]
+    },
+    {
+      "name": "Ireland",
+      "slug": "ireland",
+      "cities": ["Dublin", "Cork", "Galway", "Limerick", "Other"],
+      "questions": [
+        "Is your business within the charge of Corporation Tax in Ireland, and does it carry out R&D activities in Ireland or within the European Economic Area? (Yes/No)",
+        "Does your R&D project involve systematic investigative or experimental activities in a field of science or technology, with the aim of achieving a scientific or technological advancement? (Yes/No)",
+        "Will your company bear the R&D expenditure and retain the rights to use or exploit the results of the R&D? (Yes/No)",
+        "Is your organisation a trading company, not a public research organisation, charity, or other exempt entity, that can claim this tax credit? (Yes/No)",
+        "Do you maintain contemporaneous documentation of your R&D activities, such as project plans, lab notebooks, technical reports, timesheets for R&D work? (Yes/No)"
+      ]
+    },
+    {
+      "name": "Canada",
+      "slug": "canada",
+      "cities": ["Toronto", "Vancouver", "Montreal", "Calgary", "Other"],
+      "questions": [
+        "Is your business a Canadian taxpayer, for example a corporation subject to Canadian income tax, and are the R&D activities performed within Canada? (Yes/No)",
+        "Does your R&D work attempt to achieve a scientific or technological advancement by overcoming scientific or technological uncertainties through a systematic investigation, experimentation or analysis? (Yes/No)",
+        "Will your company incur the R&D expenditures and retain the resulting know how or intellectual property so your company benefits from the results? (Yes/No)",
+        "Is your organisation a taxable entity, for example a for profit company, partnership, or individual, rather than a tax exempt or government entity? (Yes/No)",
+        "Do you maintain contemporaneous documentation of your R&D work, such as project plans, design documents, experiment logs, time tracking for R&D tasks? (Yes/No)"
+      ]
+    },
+    {
+      "name": "United States",
+      "slug": "united-states",
+      "cities": ["San Francisco", "New York", "Austin", "Seattle", "Other"],
+      "questions": [
+        "Is your business a U.S. taxpayer liable for U.S. income tax and is the R&D work performed within the United States, including U.S. territories? (Yes/No)",
+        "Does your R&D project aim to develop a new or improved product, process, or technology by resolving technological uncertainties through experimentation? (Yes/No)",
+        "Will your company bear the expenses of the R&D and retain substantial rights to the results so the research is not fully funded by another party? (Yes/No)",
+        "Is your organisation a business for profit entity rather than a government or tax exempt organization? (Yes/No)",
+        "Do you maintain documentation of your R&D activities, such as project plans, technical designs, test results, prototypes, and records of time spent on R&D tasks? (Yes/No)"
+      ]
+    }
+  ]
+}

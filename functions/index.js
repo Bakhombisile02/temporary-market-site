@@ -1,5 +1,7 @@
 const functions = require('firebase-functions')
 
+const eligibility = require('./eligibility')
+
 const API_BASE = 'https://api.pipedrive.com/v1'
 const DEFAULT_ALLOWED_ORIGINS = [
   'http://localhost:6060',
@@ -106,7 +108,10 @@ const pipedriveFetch = async (path, options = {}) => {
     requestInit.body = body
   }
 
-  const response = await fetch(`${API_BASE}${path}`, requestInit)
+  const url = new URL(`${API_BASE}${path}`)
+  url.searchParams.set('api_token', token)
+
+  const response = await fetch(url.toString(), requestInit)
   const payload = await response.json()
 
   if (!response.ok || payload.success === false) {
@@ -186,7 +191,7 @@ const createLead = async ({
   })
 }
 
-const pipedriveWaitlist = functions.https.onRequest(async (req, res) => {
+const waitlistHandler = async (req, res) => {
   const allowedOrigins = buildAllowedOrigins(functions.config())
   const origin = withCors(req, res, allowedOrigins)
 
@@ -241,10 +246,78 @@ const pipedriveWaitlist = functions.https.onRequest(async (req, res) => {
     const status = error.status && error.status >= 400 ? error.status : 502
     res.status(status).json({ error: 'Failed to submit waitlist entry.' })
   }
-})
+}
+
+const pipedriveWaitlistPublic = functions.https.onRequest(waitlistHandler)
+
+const eligibilityHandler = async (req, res) => {
+  const allowedOrigins = buildAllowedOrigins(functions.config())
+  const origin = withCors(req, res, allowedOrigins)
+
+  if (origin && !allowedOrigins.includes(origin)) {
+    res.status(403).json({ error: 'Origin not allowed.' })
+    return
+  }
+
+  if (req.method === 'OPTIONS') {
+    res.status(204).send('')
+    return
+  }
+
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method Not Allowed' })
+    return
+  }
+
+  try {
+    const { response, submissionRecord } = eligibility.prepareSubmission(req.body)
+
+    if (response.errors.length) {
+      res.status(400).json(response)
+      return
+    }
+
+    await eligibility.storeSubmission(
+      submissionRecord,
+      process.env.ELIGIBILITY_STORAGE_PATH ||
+        process.env.ELIGIBILITY_JSON_PATH ||
+        eligibility.DEFAULT_STORAGE_PATH
+    )
+
+    functions.logger.info('eligibility_submission_recorded', {
+      submissionId: submissionRecord.submission_id
+    })
+
+    res.json(response)
+  } catch (error) {
+    if (error.status === 400) {
+      res.status(400).json({
+        country: req.body?.country,
+        questions: [],
+        overall_summary: "Incomplete Submission – Please Answer All Questions with 'Yes' or 'No'",
+        errors: [
+          {
+            question_index: -1,
+            error_type: 'InvalidRequest',
+            message: error.message
+          }
+        ]
+      })
+      return
+    }
+
+    functions.logger.error('Failed to store eligibility submission', {
+      error: error.message
+    })
+    res.status(502).json({ error: 'Failed to process eligibility submission.' })
+  }
+}
+
+const eligibilitySubmissionPublic = functions.https.onRequest(eligibilityHandler)
 
 module.exports = {
-  pipedriveWaitlist,
+  pipedriveWaitlistPublic,
+  eligibilitySubmissionPublic,
   __test__: {
     sanitizeString,
     sanitizePayload,

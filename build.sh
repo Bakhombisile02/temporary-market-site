@@ -1,11 +1,16 @@
 #!/bin/bash
-set -e # Exit on error
+set -euo pipefail
 
-# Change to the 'site' directory
-cd site
+REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
-# Install Ruby dependencies
-bundle install
+cd "$REPO_ROOT"
 
-# Build the Jekyll site using Bundler
-bundle exec jekyll build
+# Ensure Ruby gems install into the local vendor directory so Firebase builds remain reproducible.
+bundle config set --local path vendor/bundle >/dev/null
+BUNDLE_GEMFILE="${REPO_ROOT}/site/Gemfile" bundle install --jobs=4 --retry=3
+
+# Install/update Node dependencies for asset builds.
+npm install
+
+# Build the static site into ./_site using the project npm script.
+npm run build

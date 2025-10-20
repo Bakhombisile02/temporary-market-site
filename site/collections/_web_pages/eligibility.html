@@ -1,0 +1,172 @@
+---
+title: Early access eligibility check
+permalink: /eligibility/
+layout: main
+SEO:
+  description_text: Answer five quick questions to see if your company is a good fit for Radley's early access program.
+  prevent_indexing: false
+  share_image:
+---
+
+<div class="eligibility-page">
+  <div class="eligibility-container" data-eligibility-app>
+    <header class="eligibility-header">
+      <span class="eligibility-header__time">Takes under 1 minute</span>
+      <h1>Check eligibility to join early access</h1>
+      <p>
+        Start with your country, answer five yes or no questions, and instantly see if you are a
+        good candidate for our early access program.
+      </p>
+    </header>
+
+    <div class="eligibility-card">
+      <div class="eligibility-loading" data-eligibility-loading hidden>
+        Loading eligibility guide...
+      </div>
+      <div class="eligibility-global-error" data-eligibility-global-error hidden></div>
+
+      <section
+        class="eligibility-step eligibility-step--country"
+        data-eligibility-step="country"
+        aria-hidden="false"
+      >
+        <div class="eligibility-step__header">
+          <h2>Select your country</h2>
+          <p>We use country specific guidance so your answers stay accurate.</p>
+        </div>
+        <div class="eligibility-country-list" data-eligibility-countries></div>
+        <div class="eligibility-actions">
+          <button type="button" data-eligibility-country-next data-variant="primary" disabled>
+            Continue
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="eligibility-step eligibility-step--questions"
+        data-eligibility-step="questions"
+        aria-hidden="true"
+      >
+        <div class="eligibility-progress">
+          <div class="eligibility-progress__bar">
+            <div class="eligibility-progress__bar-fill" data-eligibility-progress-bar></div>
+          </div>
+          <div class="eligibility-progress__status">
+            <span data-eligibility-progress-text>1 of 5</span>
+            <span data-eligibility-progress-nudge></span>
+          </div>
+          <div class="eligibility-progress__checks" data-eligibility-progress-checks></div>
+        </div>
+        <div class="eligibility-question-card">
+          <div class="eligibility-question-card__header">
+            <p class="eligibility-step__eyebrow" data-eligibility-question-eyebrow></p>
+            <h3 data-eligibility-question-text></h3>
+          </div>
+          <div class="eligibility-answer-options" data-eligibility-answer-options></div>
+          <p class="eligibility-error" data-eligibility-answer-error hidden>
+            Please choose Yes or No
+          </p>
+          <button
+            type="button"
+            class="eligibility-note-toggle"
+            data-eligibility-note-toggle
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+              <path
+                d="M6 1v10M1 6h10"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span data-eligibility-note-toggle-text>Add details</span>
+          </button>
+          <div class="eligibility-note" data-eligibility-note-panel data-open="false">
+            <p class="eligibility-note__description" data-eligibility-note-description hidden></p>
+            <div class="eligibility-note__helpers" data-eligibility-helpers>
+              <div class="eligibility-note__select" data-eligibility-entity-group>
+                <label class="visually-hidden" for="eligibility-entity-select">Entity type</label>
+                <select id="eligibility-entity-select" data-eligibility-entity>
+                  <option value="">Select entity type</option>
+                </select>
+              </div>
+              <div class="eligibility-note__select" data-eligibility-city-group>
+                <label class="visually-hidden" for="eligibility-city-select">City</label>
+                <select id="eligibility-city-select" data-eligibility-city>
+                  <option value="">Select city</option>
+                </select>
+              </div>
+              <div
+                class="eligibility-note__checkboxes"
+                data-eligibility-records-group
+                data-eligibility-records
+              ></div>
+              <div
+                class="eligibility-note__chips"
+                data-eligibility-rights-group
+                data-eligibility-rights
+              ></div>
+            </div>
+            <label for="eligibility-note-input" class="visually-hidden">Add optional note</label>
+            <textarea
+              id="eligibility-note-input"
+              data-eligibility-note-input
+              maxlength="250"
+              placeholder="Add a short note (optional)"
+            ></textarea>
+            <div class="eligibility-note__counter" data-eligibility-note-counter>0 / 250</div>
+            <p class="eligibility-error" data-eligibility-helper-error hidden></p>
+          </div>
+        </div>
+        <div class="eligibility-actions">
+          <button type="button" data-eligibility-back data-variant="ghost">Back</button>
+          <div class="c-button">
+            <button
+              type="button"
+              class="c-button__inner c-button__inner--waitlist"
+              data-eligibility-next
+            >
+              <span class="c-button__shadow" aria-hidden="true"></span>
+              <span class="c-button__edge" aria-hidden="true"></span>
+              <span class="c-button__front">
+                <span class="c-button__label" data-eligibility-next-label>Next question</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="eligibility-step eligibility-step--result"
+        data-eligibility-step="result"
+        aria-hidden="true"
+      >
+        <div class="eligibility-result">
+          <span
+            class="eligibility-result__badge"
+            data-eligibility-result-badge
+            data-variant="success"
+          ></span>
+          <div class="eligibility-result__summary">
+            <h3 data-eligibility-result-heading></h3>
+            <p data-eligibility-result-subheading></p>
+          </div>
+          <div class="eligibility-result__details" data-eligibility-result-details></div>
+          <div class="eligibility-result__actions">
+            {% include components/button.html button_text="Join the waitlist" button_url="/#join"
+            button_variant="waitlist" open_in_new_tab=false %}
+            <button type="button" class="eligibility-restart" data-eligibility-restart>
+              Start a new check
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.RADLEY_ELIGIBILITY_DATA = {{ site.data.eligibility_questions | jsonify }};
+</script>
+<script type="module" src="/assets/js/eligibility.js"></script>

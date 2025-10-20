@@ -1,4 +1,5 @@
-{% assign c = 'c-navigation' %}
+{% assign c = 'c-navigation' %} {% assign baseurl = site.baseurl | default: '' %} {% assign
+waitlist_url = baseurl | append: '/#join' %}
 
 <!-- This is for small screens—to open a side menu that slides in. -->
 <div class="{{c}}__mobile{% if page.url == '/' %} {{c}}__mobile--inverse{% endif %}">
@@ -14,7 +15,7 @@
     {% include svg/menu.svg %}
   </button>
 
-  <a href="#hero" class="{{c}}__brand">
+  <a href="{{ baseurl }}/#hero" class="{{c}}__brand">
     <img
       class="{{c}}__logo {{c}}__logo--mobile"
       src="/assets/images/radley-small.svg"
@@ -31,7 +32,7 @@
 <nav class="{{c}}" id="primary-navigation" aria-label="Primary">
   <div class="{{c}}__wrapper">
     <div class="{{c}}__main-group">
-      <a class="{{c}}__brand {{c}}__brand--desktop" href="#hero">
+      <a class="{{c}}__brand {{c}}__brand--desktop" href="{{ baseurl }}/#hero">
         <img
           class="{{c}}__logo"
           src="/assets/images/radley-big.svg"
@@ -46,25 +47,25 @@
         data-home="{% if page.url == '/' %}true{% else %}false{% endif %}"
       >
         <li>
-          <a class="{{c}}__nav-link" href="#problem">Problem</a>
+          <a class="{{c}}__nav-link" href="{{ baseurl }}/#problem">Problem</a>
         </li>
         <li>
-          <a class="{{c}}__nav-link" href="#difference">Radley Difference</a>
+          <a class="{{c}}__nav-link" href="{{ baseurl }}/#difference">Radley Difference</a>
         </li>
         <li>
-          <a class="{{c}}__nav-link" href="#how-it-works">How It Works</a>
+          <a class="{{c}}__nav-link" href="{{ baseurl }}/#how-it-works">How It Works</a>
         </li>
         <li>
-          <a class="{{c}}__nav-link" href="#team">Team</a>
+          <a class="{{c}}__nav-link" href="{{ baseurl }}/#team">Team</a>
         </li>
         <li>
-          <a class="{{c}}__nav-link" href="#about">About</a>
+          <a class="{{c}}__nav-link" href="{{ baseurl }}/#about">About</a>
         </li>
       </ul>
     </div>
 
     <div class="{{c}}__cta-group">
-      {% include components/button.html button_text="Join the Waitlist" button_url="#join"
+      {% include components/button.html button_text="Join the Waitlist" button_url=waitlist_url
       button_variant="Waitlist" open_in_new_tab=false chevron_left=false chevron_right=false %}
     </div>
   </div>

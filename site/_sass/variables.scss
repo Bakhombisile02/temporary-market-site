@@ -11,6 +11,12 @@ html {
   --theme-color: #9777c9;
   --focus-ring-color: #5b9dd9;
 
+  --brand-primary: #9777c9;
+  --brand-secondary: #85decc;
+  --brand-electric-blue: #6395ec;
+  --brand-denim: #27567d;
+  --brand-aqua-blue: #91cfe4;
+
   --cobalt-25: #f8f5ff;
   --cobalt-50: #f1edff;
   --cobalt-100: #e3dcff;
@@ -51,8 +57,8 @@ html {
   --transition-snappy: cubic-bezier(0.55, -0.6, 0.5, 1.5);
 
   // Buttons
-  --primary-background-color: #0a2a6a;
-  --button-hover-color: #0c357f;
+  --primary-background-color: var(--brand-denim);
+  --button-hover-color: var(--brand-aqua-blue);
   --button-border-radius: 10px;
   --button-border-thickness: 1px;
   --button-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.1);

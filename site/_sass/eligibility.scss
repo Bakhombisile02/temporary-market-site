@@ -1,0 +1,586 @@
+.eligibility-page {
+  padding: clamp(72px, 12vw, 160px) 0 120px 0;
+  background: linear-gradient(180deg, rgba(12, 10, 31, 0.04) 0%, rgba(12, 10, 31, 0.08) 100%);
+}
+
+.eligibility-container {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 40px);
+}
+
+.eligibility-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.eligibility-header__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(151, 119, 201, 0.12);
+  color: var(--cobalt-800);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.eligibility-header h1 {
+  margin: 0;
+  font-size: clamp(32px, 6vw, 46px);
+  line-height: 1.1;
+  color: var(--cobalt-950);
+}
+
+.eligibility-header p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.65;
+  max-width: 620px;
+  color: rgba(30, 41, 59, 0.8);
+}
+
+.eligibility-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: 0 32px 80px -52px rgba(15, 30, 64, 0.35);
+  border: 1px solid rgba(133, 222, 204, 0.22);
+  overflow: hidden;
+}
+
+.eligibility-loading {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 16px;
+  color: var(--cobalt-700);
+}
+
+.eligibility-global-error {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(203, 35, 57, 0.28);
+  background: rgba(203, 35, 57, 0.08);
+  color: rgba(110, 26, 36, 0.92);
+  font-size: 15px;
+}
+
+.eligibility-step {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eligibility-step[aria-hidden='false'] {
+  display: flex;
+}
+
+.eligibility-step__header h2 {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 30px);
+  color: var(--cobalt-900);
+}
+
+.eligibility-step__header p {
+  margin: 8px 0 0 0;
+  color: rgba(30, 41, 59, 0.75);
+  font-size: 16px;
+}
+
+.eligibility-country-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.eligibility-country {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(151, 119, 201, 0.18);
+  background: rgba(245, 247, 255, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.eligibility-country:focus-visible {
+  box-shadow: 0 0 0 3px rgba(99, 149, 236, 0.35);
+}
+
+.eligibility-country:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 149, 236, 0.45);
+}
+
+.eligibility-country__name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cobalt-900);
+}
+
+.eligibility-country__hint {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(46, 56, 77, 0.7);
+}
+
+.eligibility-country[aria-pressed='true'] {
+  border-color: rgba(99, 149, 236, 0.6);
+  background: rgba(211, 223, 255, 0.45);
+}
+
+.eligibility-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.eligibility-actions button:not(.c-button__inner) {
+  min-width: 140px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.eligibility-actions button[data-variant='primary'] {
+  background: linear-gradient(135deg, rgba(151, 119, 201, 0.95) 0%, rgba(133, 222, 204, 1) 100%);
+  color: #fff;
+  box-shadow: 0 18px 42px -26px rgba(151, 119, 201, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eligibility-actions button[data-variant='primary']:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.eligibility-actions button[data-variant='primary']:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 50px -32px rgba(151, 119, 201, 0.7);
+}
+
+.eligibility-actions button[data-variant='ghost'] {
+  background: transparent;
+  color: var(--cobalt-700);
+}
+
+.eligibility-actions .c-button {
+  flex-shrink: 0;
+}
+
+.eligibility-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.eligibility-progress__bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(151, 119, 201, 0.1);
+  overflow: hidden;
+}
+
+.eligibility-progress__bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(151, 119, 201, 0.9) 0%, rgba(133, 222, 204, 1) 100%);
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.eligibility-progress__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(46, 56, 77, 0.7);
+}
+
+.eligibility-progress__checks {
+  display: flex;
+  gap: 8px;
+}
+
+.eligibility-progress__check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(151, 119, 201, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.eligibility-progress__check[data-complete='true'] {
+  background: rgba(133, 222, 204, 0.9);
+  border-color: rgba(133, 222, 204, 1);
+  color: var(--cobalt-950);
+}
+
+.eligibility-question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(151, 119, 201, 0.2);
+  background: rgba(247, 249, 255, 0.9);
+}
+
+.eligibility-step__eyebrow {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(46, 56, 77, 0.65);
+}
+
+.eligibility-question-card h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--cobalt-900);
+}
+
+.eligibility-answer-options {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.eligibility-answer {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid rgba(151, 119, 201, 0.18);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--cobalt-800);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.eligibility-answer input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.eligibility-answer[data-selected='true'] {
+  border-color: rgba(99, 149, 236, 0.6);
+  box-shadow: 0 14px 32px -30px rgba(99, 149, 236, 0.8);
+}
+
+.eligibility-answer:focus-visible {
+  outline: 3px solid rgba(99, 149, 236, 0.45);
+  outline-offset: 2px;
+}
+
+.eligibility-note-toggle {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(151, 119, 201, 0.2);
+  background: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cobalt-800);
+  cursor: pointer;
+}
+
+.eligibility-note-toggle[data-required='true']::after {
+  content: 'Required';
+  margin-left: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(203, 35, 57, 0.08);
+  color: rgba(203, 35, 57, 0.92);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.eligibility-note-toggle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.eligibility-note-toggle[aria-expanded='true'] {
+  border-color: rgba(99, 149, 236, 0.6);
+}
+
+.eligibility-note {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border: 1px dashed rgba(151, 119, 201, 0.25);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.eligibility-note__description {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(46, 56, 77, 0.75);
+}
+
+.eligibility-note[data-open='true'] {
+  display: flex;
+}
+
+.eligibility-note textarea {
+  width: 100%;
+  min-height: 72px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 149, 236, 0.4);
+  font-size: 14px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.eligibility-note textarea:focus {
+  outline: none;
+  border-color: rgba(99, 149, 236, 0.7);
+  box-shadow: 0 0 0 3px rgba(99, 149, 236, 0.18);
+}
+
+.eligibility-note__counter {
+  font-size: 13px;
+  color: rgba(46, 56, 77, 0.6);
+  text-align: right;
+}
+
+.eligibility-note__helpers {
+  display: grid;
+  gap: 12px;
+}
+
+.eligibility-note__select,
+.eligibility-note__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.eligibility-note__select select {
+  min-width: 180px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(151, 119, 201, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.eligibility-note__select select:focus {
+  border-color: rgba(99, 149, 236, 0.6);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 149, 236, 0.18);
+}
+
+.eligibility-note__checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.eligibility-note__checkboxes label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(151, 119, 201, 0.2);
+  font-size: 13px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.eligibility-note__checkboxes input {
+  pointer-events: none;
+}
+
+.eligibility-note__chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(151, 119, 201, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.eligibility-note__chip[data-selected='true'],
+.eligibility-note__checkboxes label[data-selected='true'] {
+  border-color: rgba(99, 149, 236, 0.6);
+  background: rgba(211, 223, 255, 0.45);
+}
+
+.eligibility-error {
+  margin-top: -8px;
+  font-size: 14px;
+  color: rgba(203, 35, 57, 0.92);
+}
+
+.eligibility-result {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eligibility-result__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.eligibility-result__badge[data-variant='success'] {
+  background: rgba(133, 222, 204, 0.16);
+  color: var(--teal-500);
+  border: 1px solid rgba(133, 222, 204, 0.4);
+}
+
+.eligibility-result__badge[data-variant='warning'] {
+  background: rgba(255, 205, 104, 0.16);
+  color: #8c6114;
+  border: 1px solid rgba(255, 205, 104, 0.32);
+}
+
+.eligibility-result__badge[data-variant='error'] {
+  background: rgba(203, 35, 57, 0.12);
+  color: #8f1d2d;
+  border: 1px solid rgba(203, 35, 57, 0.28);
+}
+
+.eligibility-result__summary h3 {
+  margin: 0;
+  font-size: 26px;
+  color: var(--cobalt-900);
+}
+
+.eligibility-result__summary p {
+  margin: 12px 0 0 0;
+  font-size: 16px;
+  color: rgba(30, 41, 59, 0.78);
+}
+
+.eligibility-result__details {
+  display: grid;
+  gap: 18px;
+}
+
+.eligibility-result__item {
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(151, 119, 201, 0.16);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.eligibility-result__item h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: var(--cobalt-900);
+}
+
+.eligibility-result__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(30, 41, 59, 0.7);
+}
+
+.eligibility-result__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eligibility-result__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.eligibility-result__actions .c-button {
+  width: 100%;
+  max-width: 240px;
+}
+
+.eligibility-restart {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--cobalt-700);
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .eligibility-page {
+    padding: 24px 0 80px 0;
+  }
+
+  .eligibility-card {
+    padding: 20px;
+  }
+
+  .eligibility-country-list {
+    grid-template-columns: 1fr;
+  }
+
+  .eligibility-actions {
+    justify-content: stretch;
+  }
+
+  .eligibility-actions button:not(.c-button__inner) {
+    flex: 1;
+  }
+
+  .eligibility-actions .c-button {
+    flex: 1;
+  }
+
+  .eligibility-result__actions {
+    align-items: stretch;
+  }
+}

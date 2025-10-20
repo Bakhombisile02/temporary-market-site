@@ -186,6 +186,10 @@ SEO:
 
   <section class="radley-section radley-section--soft" id="join">
     <div class="radley-container">
+      <div class="radley-eligibility-cta">
+        {% include components/button.html button_text="Check eligibility to join early access"
+        button_url="/eligibility/" button_variant="primary" open_in_new_tab=false %}
+      </div>
       <h2 class="radley-section__title">Join the waitlist</h2>
       <div class="radley-waitlist">
         <div class="radley-waitlist__intro">
@@ -244,84 +248,12 @@ SEO:
           <p class="radley-waitlist__panel-copy">
             Share a few details to reserve a spot on the waitlist.
           </p>
-          <form class="radley-form" action="#" method="post" data-waitlist-form>
-            <label class="visually-hidden" for="waitlist-title">Title or position</label>
-            <input
-              class="radley-form__field"
-              type="text"
-              id="waitlist-title"
-              name="title"
-              placeholder="Your title or position"
-              autocomplete="organization-title"
-              required
-            />
-
-            <label class="visually-hidden" for="waitlist-name">Name</label>
-            <input
-              class="radley-form__field"
-              type="text"
-              id="waitlist-name"
-              name="name"
-              placeholder="Your name"
-              autocomplete="name"
-              required
-            />
-
-            <label class="visually-hidden" for="waitlist-email">Business email</label>
-            <input
-              class="radley-form__field"
-              type="email"
-              id="waitlist-email"
-              name="email"
-              placeholder="Business email"
-              autocomplete="email"
-              required
-            />
-
-            <label class="visually-hidden" for="waitlist-contact">Contact number</label>
-            <div class="radley-form__field-group radley-form__field-group--dial">
-              <label class="visually-hidden" for="waitlist-dial">Country dial code</label>
-              <select class="radley-form__select" id="waitlist-dial" name="dial_code" required>
-                <option value="" disabled selected hidden>Select code</option>
-                <option value="+64" data-country="New Zealand">New Zealand (+64)</option>
-                <option value="+61" data-country="Australia">Australia (+61)</option>
-                <option value="+65" data-country="Singapore">Singapore (+65)</option>
-                <option value="+44" data-country="United Kingdom">United Kingdom (+44)</option>
-                <option value="+353" data-country="Ireland">Ireland (+353)</option>
-                <option value="+1" data-country="Canada">Canada (+1)</option>
-                <option value="+1" data-country="United States">United States (+1)</option>
-              </select>
-              <input
-                class="radley-form__field radley-form__field--number"
-                type="tel"
-                id="waitlist-contact"
-                name="contact"
-                placeholder="Contact number"
-                autocomplete="tel"
-                inputmode="tel"
-                pattern="[0-9\s()+-]*"
-                required
-              />
-            </div>
-
-            <label class="visually-hidden" for="waitlist-business">Business name</label>
-            <input
-              class="radley-form__field"
-              type="text"
-              id="waitlist-business"
-              name="business_name"
-              placeholder="Business name"
-              autocomplete="organization"
-              required
-            />
-
-            <p class="radley-form__status" data-waitlist-status aria-live="polite"></p>
-
-            <div class="radley-form__actions">
-              {% include components/button.html button_text="Join the Waitlist"
-              button_variant="Waitlist" type="submit" %}
-            </div>
-          </form>
+          <div
+            class="pipedriveWebForms"
+            data-pd-webforms="https://webforms.pipedrive.com/f/63tPrJ7zleAv1fKqv6QIxpFjQJv29IPGrmQvHDCwhDl7T7smbTyhFZIsxzx2jTrw31"
+          >
+            <script src="https://webforms.pipedrive.com/f/loader"></script>
+          </div>
           <p class="radley-form__hint">
             Start claiming your innovation funding with confidence and clarity.
           </p>
