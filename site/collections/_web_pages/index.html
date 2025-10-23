@@ -19,10 +19,21 @@ SEO:
             generate audit ready documentation, and keep you compliant every month.
           </p>
           <div class="radley-hero__buttons">
-            {% include components/button.html button_text="Join the Waitlist" button_url="#join"
-            button_variant="Waitlist" open_in_new_tab=false %}
-            <a class="radley-link" href="#how-it-works">
-              <span>How it works</span>
+            <div class="c-button">
+              <a
+                class="c-button__inner c-button__inner--waitlist"
+                href="#hero"
+                data-roadblock-open
+              >
+                <span class="c-button__shadow" aria-hidden="true"></span>
+                <span class="c-button__edge" aria-hidden="true"></span>
+                <span class="c-button__front">
+                  <span class="c-button__label">Join the Waitlist</span>
+                </span>
+              </a>
+            </div>
+            <a class="radley-link" href="#how-it-works-heading">
+              <span>How Radley Works</span>
               <svg width="15" height="10" viewBox="0 0 13 10" aria-hidden="true" focusable="false">
                 <path d="M1,5 L11,5" />
                 <polyline points="8 1 12 5 8 9" />
@@ -31,16 +42,25 @@ SEO:
           </div>
         </div>
         <div class="radley-hero__visual">
-          <script
-            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js"
-            type="module"
-          ></script>
-          <dotlottie-wc
-            src="https://lottie.host/08eb5002-3a58-4f7e-af89-aadc8dfb6db3/aLXWlKoLXI.lottie"
-            style="width: 300px; height: 300px"
-            autoplay
-            loop
-          ></dotlottie-wc>
+          <div
+            class="radley-hero__animation"
+          >
+            <dotlottie-wc
+              src="https://lottie.host/08eb5002-3a58-4f7e-af89-aadc8dfb6db3/aLXWlKoLXI.lottie"
+              style="width: 300px; height: 300px"
+              autoplay
+              loop
+            ></dotlottie-wc>
+            <img
+              src="{{ '/assets/images/hero.svg' | relative_url }}"
+              alt=""
+              aria-hidden="true"
+              class="radley-hero__animation-fallback"
+              width="300"
+              height="300"
+              data-lottie-fallback
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -70,87 +90,161 @@ SEO:
 
   <section class="radley-section radley-section--light" id="how-it-works">
     <div class="radley-container">
-      <h2 class="radley-section__title">How Radley works</h2>
+      <h2 class="radley-section__title" id="how-it-works-heading">How Radley works</h2>
       <p class="radley-section__intro">
         Radley starts where engineering happens — your repositories and tools — so you stop chasing
         paperwork and start getting continuous, audit-ready insight.
       </p>
 
       <div class="radley-steps" aria-hidden="false">
-        <div class="radley-step">
-          <span class="radley-benefit__marker" aria-hidden="true"
-            >{% include icons/tick.svg %}</span
-          >
+        <div class="radley-step radley-step--connect">
           <div class="radley-step__content">
-            <strong>Connect your tools.</strong>
+            <div class="radley-step__title">
+              <span class="radley-step__icon" aria-hidden="true">
+                <svg
+                  class="radley-step__icon-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                >
+                  <path d="M7 12l5 5l-1.5 1.5a3.536 3.536 0 1 1 -5 -5l1.5 -1.5z" />
+                  <path d="M17 12l-5 -5l1.5 -1.5a3.536 3.536 0 1 1 5 5l-1.5 1.5z" />
+                  <path d="M3 21l2.5 -2.5" />
+                  <path d="M18.5 5.5l2.5 -2.5" />
+                  <path d="M10 11l-2 2" />
+                  <path d="M13 14l-2 2" />
+                </svg>
+              </span>
+              <strong>Connect your tools.</strong>
+            </div>
             <div>
               Link GitHub, Bitbucket, payroll, and accounting systems so Radley can see the work.
             </div>
           </div>
         </div>
 
-        <div class="radley-step">
-          <span class="radley-benefit__marker" aria-hidden="true"
-            >{% include icons/tick.svg %}</span
-          >
+        <div class="radley-step radley-step--analyze">
           <div class="radley-step__content">
-            <strong>Analyze activity.</strong>
+            <div class="radley-step__title">
+              <span class="radley-step__icon" aria-hidden="true">
+                <svg
+                  class="radley-step__icon-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                >
+                  <path d="M20 11a8.1 8.1 0 0 0 -6.986 -6.918a8.095 8.095 0 0 0 -8.019 3.918" />
+                  <path d="M4 13a8.1 8.1 0 0 0 15 3" />
+                  <path d="M19 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M5 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                </svg>
+              </span>
+              <strong>Analyze activity.</strong>
+            </div>
             <div>Repository-first AI classifies qualifying R&amp;D from real engineering work.</div>
           </div>
         </div>
 
-        <div class="radley-step">
-          <span class="radley-benefit__marker" aria-hidden="true"
-            >{% include icons/tick.svg %}</span
-          >
+        <div class="radley-step radley-step--track">
           <div class="radley-step__content">
-            <strong>Generate documentation.</strong>
+            <div class="radley-step__title">
+              <span class="radley-step__icon" aria-hidden="true">
+                <svg
+                  class="radley-step__icon-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                >
+                  <path d="M4 16l6 -7l5 5l5 -6" />
+                  <path d="M15 14m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M10 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M4 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M20 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                </svg>
+              </span>
+              <strong>Track progress.</strong>
+            </div>
+            <div>Monitor claim value monthly and get visibility across projects and teams.</div>
+          </div>
+        </div>
+
+        <div class="radley-step radley-step--document">
+          <div class="radley-step__content">
+            <div class="radley-step__title">
+              <span class="radley-step__icon" aria-hidden="true">
+                <svg
+                  class="radley-step__icon-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  focusable="false"
+                >
+                  <path d="M15 15m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5" />
+                  <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -1 1.73" />
+                  <path d="M6 9l12 0" />
+                  <path d="M6 12l3 0" />
+                  <path d="M6 15l2 0" />
+                </svg>
+              </span>
+              <strong>Generate documentation.</strong>
+            </div>
             <div>Produce audit-ready reports and evidence automatically for confident claims.</div>
           </div>
         </div>
 
-        <div class="radley-step">
-          <span class="radley-benefit__marker" aria-hidden="true"
-            >{% include icons/tick.svg %}</span
-          >
-          <div class="radley-step__content">
-            <strong>Track progress.</strong>
-            <div>Monitor claim value monthly and get visibility across projects and teams.</div>
-          </div>
-        </div>
+        <span class="radley-steps__indicator radley-steps__indicator--top" aria-hidden="true"></span>
+        <span class="radley-steps__indicator radley-steps__indicator--bottom" aria-hidden="true"></span>
       </div>
 
       <div class="radley-integrations" aria-label="Supported integrations">
         <p class="radley-integrations__tagline">Works with the tools your team already uses.</p>
-        <div class="radley-integrations__carousel" role="region" aria-live="polite">
-          <div class="radley-integrations__track">
+        <div
+          class="radley-integrations__carousel"
+          role="region"
+          aria-live="polite"
+          data-integrations-marquee
+        >
+          <div class="radley-integrations__track" data-integrations-track>
             <div class="radley-integrations__slide">
-              <img src="/assets/icons/integrations/logo-github.svg" alt="GitHub" />
-            </div>
-            <div class="radley-integrations__slide">
-              <img src="/assets/icons/integrations/logo-quickbooks.svg" alt="QuickBooks" />
-            </div>
-            <div class="radley-integrations__slide">
-              <img src="/assets/icons/integrations/logo-xero.svg" alt="Xero" />
-            </div>
-            <div class="radley-integrations__slide">
-              <img src="/assets/icons/integrations/logo-atlassian.svg" alt="Atlassian" />
+              <img class="radley-integrations__logo" src="/assets/icons/integrations/GitHub_Logo.png" alt="GitHub" />
             </div>
             <div class="radley-integrations__slide">
-              <img src="/assets/icons/integrations/logo-slack.svg" alt="Slack" />
+              <img class="radley-integrations__logo" src="/assets/icons/integrations/Jira_logo_light.svg" alt="Jira" />
             </div>
             <div class="radley-integrations__slide">
-              <img src="/assets/icons/integrations/logo-gitlab.svg" alt="GitLab" />
+              <img class="radley-integrations__logo radley-integrations__logo--notion" src="/assets/icons/integrations/Notion_app_logo.png" alt="Notion" />
             </div>
-
-            <div class="radley-integrations__slide" aria-hidden="true">
-              <img src="/assets/icons/integrations/logo-github.svg" alt="" />
-            </div>
-            <div class="radley-integrations__slide" aria-hidden="true">
-              <img src="/assets/icons/integrations/logo-quickbooks.svg" alt="" />
-            </div>
-            <div class="radley-integrations__slide" aria-hidden="true">
-              <img src="/assets/icons/integrations/logo-xero.svg" alt="" />
+            <div class="radley-integrations__slide">
+              <img class="radley-integrations__logo radley-integrations__logo--xero" src="/assets/icons/integrations/Xero_software_logo.svg" alt="Xero" />
             </div>
           </div>
         </div>
@@ -158,7 +252,41 @@ SEO:
     </div>
   </section>
 
-  <section class="radley-section radley-section--light" id="who">
+  <section class="radley-section radley-section--ink" id="trust">
+    <div class="radley-container">
+      <h2 class="radley-section__title">Trust and compliance</h2>
+      <p class="radley-section__intro">Safe, compliant, and built for modern teams.</p>
+      <p class="radley-section__copy">
+        Radley is engineered as a compliance engine. SOC 2 control principles guide how we ingest,
+        classify, and retain your data, while AI accelerates the analysis and assembles the final
+        compliance documentation.
+      </p>
+      <div class="radley-controls">
+        <div class="radley-control">
+          SOC 2-aligned access, logging, and retention practices from the start.
+        </div>
+        <div class="radley-control">
+          AI-assisted reviews tied to the underlying engineering evidence — never a black box.
+        </div>
+        <div class="radley-control">
+          Immutable evidence trails so auditors and advisors can verify every claim.
+        </div>
+      </div>
+      <p class="radley-section__subhead">Supported jurisdictions</p>
+      <ul class="radley-region-list">
+        <li>New Zealand</li>
+        <li>Australia</li>
+        <li>Singapore</li>
+        <li>United Kingdom</li>
+        <li>Ireland</li>
+        <li>Canada</li>
+        <li>United States</li>
+      </ul>
+      <p class="radley-summary">Security-led automation that delivers evidence your auditors can trust.</p>
+    </div>
+  </section>
+
+  <section class="radley-section radley-section--light" id="who" data-roadblock-trigger>
     <div class="radley-container">
       <h2 class="radley-section__title">Who it's for</h2>
       <div class="radley-columns">
@@ -187,107 +315,450 @@ SEO:
     </div>
   </section>
 
-  <section class="radley-section radley-section--ink" id="trust">
-    <div class="radley-container">
-      <h2 class="radley-section__title">Trust and compliance</h2>
-      <p class="radley-section__intro">Lower risk, higher confidence.</p>
-      <p>
-        Jurisdictions covered: New Zealand, Australia, Singapore, United Kingdom, Ireland, Canada,
-        United States.
-      </p>
-      <ul class="radley-chip-list">
-        <li class="radley-chip">New Zealand</li>
-        <li class="radley-chip">Australia</li>
-        <li class="radley-chip">Singapore</li>
-        <li class="radley-chip">United Kingdom</li>
-        <li class="radley-chip">Ireland</li>
-        <li class="radley-chip">Canada</li>
-        <li class="radley-chip">United States</li>
-      </ul>
-      <div class="radley-controls">
-        <div class="radley-control">Immutable audit trails for every decision.</div>
-        <div class="radley-control">
-          Continuous and transparent documentation that auditors can verify.
-        </div>
-        <div class="radley-control">SOC 2 aligned data practices from day one.</div>
-      </div>
-      <p class="radley-summary">The safest way to claim is the smartest way to claim.</p>
-    </div>
-  </section>
-
-  <section class="radley-section radley-section--soft" id="join" data-roadblock-trigger>
-    <div class="radley-container">
-      <div class="radley-eligibility-cta">
-        {% include components/button.html button_text="Check eligibility to join early access"
-        button_url="/eligibility/" button_variant="primary" open_in_new_tab=false %}
-      </div>
-      <h2 class="radley-section__title">Join the waitlist</h2>
-      <div class="radley-waitlist-trigger">
-        <p class="radley-waitlist-trigger__copy">Be first to know when Radley opens up access.</p>
-        <div class="c-button">
-          <button
-            type="button"
-            class="c-button__inner c-button__inner--primary"
-            data-roadblock-open
-          >
-            <span class="c-button__shadow" aria-hidden="true"></span>
-            <span class="c-button__edge" aria-hidden="true"></span>
-            <span class="c-button__front">
-              <span class="c-button__label">Get on the waitlist</span>
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="radley-roadblock" data-roadblock-modal aria-hidden="true">
-      <div
-        class="radley-roadblock__dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="waitlist-roadblock-title"
+  <div class="radley-roadblock" data-roadblock-modal aria-hidden="true" inert>
+    <div
+      class="radley-roadblock__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="waitlist-roadblock-title"
+    >
+      <button
+        type="button"
+        class="radley-roadblock__close"
+        data-roadblock-close
+        data-roadblock-focus
+        aria-label="Close waitlist form"
       >
-        <button
-          type="button"
-          class="radley-roadblock__close"
-          data-roadblock-close
-          data-roadblock-focus
-          aria-label="Close waitlist form"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="radley-roadblock__content">
-          <div class="radley-waitlist radley-waitlist--embed">
-            <div class="radley-waitlist__panel">
-              <h3 id="waitlist-roadblock-title" class="visually-hidden">
-                Join the Radley waitlist
-              </h3>
-              <div class="radley-waitlist__brand">
-                <img
-                  class="radley-waitlist__logo"
-                  src="/assets/images/radley-big.svg"
-                  alt="Radley"
-                  width="156"
-                  height="42"
-                />
-              </div>
-              <div class="radley-waitlist__embed" data-waitlist-embed>
-                <div
-                  class="pipedriveWebForms"
-                  data-pd-webforms="https://webforms.pipedrive.com/f/63tPrJ7zleAv1fKqv6QIxpFjQJv29IPGrmQvHDCwhDl7T7smbTyhFZIsxzx2jTrw31"
-                >
-                  <script src="https://webforms.pipedrive.com/f/loader"></script>
-                </div>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="radley-roadblock__content">
+        <div class="radley-waitlist radley-waitlist--embed">
+          <div class="radley-waitlist__panel">
+            <h3 id="waitlist-roadblock-title" class="visually-hidden">
+              Join the Radley waitlist
+            </h3>
+            <div class="radley-waitlist__brand">
+              <img
+                class="radley-waitlist__logo"
+                src="/assets/images/radley-big.svg"
+                alt="Radley"
+                width="156"
+                height="42"
+              />
+            </div>
+            <div
+              class="radley-waitlist__embed"
+              data-waitlist-embed
+              data-waitlist-src="https://webforms.pipedrive.com/f/63tPrJ7zleAv1fKqv6QIxpFjQJv29IPGrmQvHDCwhDl7T7smbTyhFZIsxzx2jTrw31"
+              data-waitlist-state="idle"
+            >
+              <div
+                class="pipedriveWebForms"
+                data-pd-webforms="https://webforms.pipedrive.com/f/63tPrJ7zleAv1fKqv6QIxpFjQJv29IPGrmQvHDCwhDl7T7smbTyhFZIsxzx2jTrw31"
+                data-waitlist-form
+              ></div>
+              <div class="radley-waitlist__loading" data-waitlist-loading aria-live="polite">
+                <span class="radley-waitlist__loading-spinner" aria-hidden="true"></span>
+                <span>Loading secure waitlist form…</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <section class="radley-section radley-section--light" id="team">
     <div class="radley-container">
       <h2 class="radley-section__title">The team behind Radley</h2>
+      <p class="radley-section__intro">
+        We bring accounting, engineering, and product experience together to make R&amp;D tax
+        compliance simple.
+      </p>
+      <div class="radley-team-carousel" data-team-carousel>
+        <div class="radley-team-carousel__viewport" data-team-carousel-viewport>
+          <ul
+            class="radley-team"
+            id="radley-team-carousel-track"
+            aria-label="Radley leadership and team"
+            data-team-carousel-track
+          >
+            <li class="radley-team__item">
+              <article class="radley-team-card" tabindex="0">
+            <div class="radley-team-card__portrait" data-has-image="true" data-portrait="tim">
+              <img
+                class="radley-team-card__image"
+                src="/assets/images/team/Trever_photo.jpeg"
+                alt="Trevor McIntyre portrait"
+                width="640"
+                height="800"
+                loading="eager"
+                decoding="async"
+                onerror="this.remove(); this.parentElement.removeAttribute('data-has-image');"
+              />
+              <span aria-hidden="true" class="radley-team-card__initials">TM</span>
+            </div>
+            <div class="radley-team-card__body">
+              <h3 class="radley-team-card__name">Trevor McIntyre</h3>
+              <p class="radley-team-card__role">Founder and CPO</p>
+                  <p class="radley-team-card__bio">
+                    Chartered accountant and repeat founder. Deep experience in R&amp;D frameworks,
+                    compliance automation, and SaaS leadership.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="radley-team__item">
+              <article class="radley-team-card" tabindex="0">
+            <div class="radley-team-card__portrait" data-has-image="true">
+              <img
+                class="radley-team-card__image"
+                src="/assets/images/team/Hein_photo.jpeg"
+                alt="Hein van der Merwe portrait"
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                onerror="this.remove(); this.parentElement.removeAttribute('data-has-image');"
+              />
+              <span aria-hidden="true" class="radley-team-card__initials">HM</span>
+            </div>
+            <div class="radley-team-card__body">
+              <h3 class="radley-team-card__name">Hein van der Merwe</h3>
+              <p class="radley-team-card__role">CEO</p>
+                  <p class="radley-team-card__bio">
+                    Tech executive with a background in scaling compliance software and commercial
+                    strategy across global markets.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="radley-team__item">
+              <article class="radley-team-card" tabindex="0">
+            <div class="radley-team-card__portrait" data-has-image="true">
+              <img
+                class="radley-team-card__image"
+                src="/assets/images/team/Peter_Photo.jpeg"
+                alt="Pieter Brits portrait"
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                onerror="this.remove(); this.parentElement.removeAttribute('data-has-image');"
+              />
+              <span aria-hidden="true" class="radley-team-card__initials">PB</span>
+            </div>
+            <div class="radley-team-card__body">
+              <h3 class="radley-team-card__name">Pieter Brits</h3>
+              <p class="radley-team-card__role">Chairman and Director</p>
+                  <p class="radley-team-card__bio">
+                    Former law firm partner and governance expert who oversees legal and regulatory
+                    compliance.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="radley-team__item">
+              <article class="radley-team-card" tabindex="0">
+            <div class="radley-team-card__portrait" data-has-image="true" data-portrait="tim">
+              <img
+                class="radley-team-card__image"
+                src="/assets/images/team/Liam_photo.jpeg"
+                alt="Liam Hamer portrait"
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                onerror="this.remove(); this.parentElement.removeAttribute('data-has-image');"
+              />
+              <span aria-hidden="true" class="radley-team-card__initials">LH</span>
+            </div>
+            <div class="radley-team-card__body">
+              <h3 class="radley-team-card__name">Liam Hamer</h3>
+              <p class="radley-team-card__role">Development Team Lead</p>
+                  <p class="radley-team-card__bio">
+                    Leads the engineering team that builds and scales the Radley platform. Turns
+                    complex compliance rules into a seamless product experience.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="radley-team__item">
+              <article class="radley-team-card" tabindex="0">
+            <div class="radley-team-card__portrait" data-has-image="true">
+              <img
+                class="radley-team-card__image"
+                src="/assets/images/team/Bakhombisile_photo.jpeg"
+                alt="Bakhombisile Dlamini portrait"
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                onerror="this.remove(); this.parentElement.removeAttribute('data-has-image');"
+              />
+              <span aria-hidden="true" class="radley-team-card__initials">BD</span>
+            </div>
+            <div class="radley-team-card__body">
+              <h3 class="radley-team-card__name">Bakhombisile Dlamini</h3>
+              <p class="radley-team-card__role">Software Developer</p>
+                  <p class="radley-team-card__bio">
+                    Full stack software engineer with front end and back end expertise. Focused on
+                    practical solutions for complex problems.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="radley-team__item">
+              <article class="radley-team-card" tabindex="0">
+            <div class="radley-team-card__portrait" data-has-image="true" data-portrait="tim">
+              <img
+                class="radley-team-card__image"
+                src="/assets/images/team/Tim_photo.jpeg"
+                alt="Tim Coughlan portrait"
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                onerror="this.remove(); this.parentElement.removeAttribute('data-has-image');"
+              />
+              <span aria-hidden="true" class="radley-team-card__initials">TC</span>
+            </div>
+            <div class="radley-team-card__body">
+              <h3 class="radley-team-card__name">Tim Coughlan</h3>
+              <p class="radley-team-card__role">Advisor</p>
+                  <p class="radley-team-card__bio">
+                    Accounting partner who guides alignment with evolving R&amp;D legislation and
+                    professional standards.
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+        <div class="radley-team-carousel__controls">
+          <button
+            type="button"
+            class="radley-team-carousel__button radley-team-carousel__button--prev"
+            data-team-carousel-prev
+            aria-label="View previous team members"
+            aria-controls="radley-team-carousel-track"
+            aria-disabled="true"
+            disabled
+          >
+            <span aria-hidden="true">&larr;</span>
+          </button>
+          <button
+            type="button"
+            class="radley-team-carousel__button radley-team-carousel__button--next"
+            data-team-carousel-next
+            aria-label="View more team members"
+            aria-controls="radley-team-carousel-track"
+          >
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+        </div>
+        </div>
+        <script>
+          ;(function () {
+            const carousel = document.querySelector('[data-team-carousel]')
+            if (!carousel) {
+              return
+            }
+
+            const viewport = carousel.querySelector('[data-team-carousel-viewport]')
+            const track = carousel.querySelector('[data-team-carousel-track]')
+            const slides = Array.from(track?.children ?? [])
+            const prevButton = carousel.querySelector('[data-team-carousel-prev]')
+            const nextButton = carousel.querySelector('[data-team-carousel-next]')
+            if (!viewport || !track || slides.length === 0 || !prevButton || !nextButton) {
+              return
+            }
+
+            let currentIndex = 0
+            let rafId = null
+
+            const getMetrics = () => {
+              const firstSlide = slides[0]
+              if (!firstSlide) {
+                return { width: 0, gap: 0 }
+              }
+
+              const width = firstSlide.getBoundingClientRect().width
+              const styles = getComputedStyle(track)
+              const gap = parseFloat(styles.columnGap || styles.gap || '0')
+              return {
+                width,
+                gap: Number.isNaN(gap) ? 0 : gap
+              }
+            }
+
+            const getStepSize = () => {
+              const metrics = getMetrics()
+              return metrics.width + metrics.gap
+            }
+
+            const getMaxScroll = () => {
+              return Math.max(0, track.scrollWidth - viewport.clientWidth)
+            }
+
+            const clampIndex = (index) => {
+              const step = getStepSize()
+              if (!step) {
+                return 0
+              }
+
+              const maxScroll = getMaxScroll()
+              const maxIndex = Math.max(0, Math.round(maxScroll / step))
+              return Math.min(Math.max(index, 0), maxIndex)
+            }
+
+            const updateButtons = () => {
+              const epsilon = 1
+              const atStart = viewport.scrollLeft <= epsilon
+              const atEnd = viewport.scrollLeft >= getMaxScroll() - epsilon
+              prevButton.disabled = atStart
+              nextButton.disabled = atEnd
+              prevButton.setAttribute('aria-disabled', String(atStart))
+              nextButton.setAttribute('aria-disabled', String(atEnd))
+            }
+
+            const scrollToIndex = (index, smooth = true) => {
+              const step = getStepSize()
+              if (!step) {
+                return
+              }
+
+              currentIndex = clampIndex(index)
+              const offset = Math.min(currentIndex * step, getMaxScroll())
+              viewport.scrollTo({
+                left: offset,
+                behavior: smooth ? 'smooth' : 'auto',
+              })
+
+              window.requestAnimationFrame(updateButtons)
+            }
+
+            const queueIndexUpdate = () => {
+              if (rafId !== null) {
+                return
+              }
+
+              rafId = window.requestAnimationFrame(() => {
+                rafId = null
+                const step = getStepSize()
+                if (!step) {
+                  return
+                }
+
+                const rawIndex = viewport.scrollLeft / step
+                currentIndex = clampIndex(Math.round(rawIndex))
+                updateButtons()
+              })
+            }
+
+            prevButton.addEventListener('click', () => {
+              scrollToIndex(currentIndex - 1)
+            })
+
+            nextButton.addEventListener('click', () => {
+              scrollToIndex(currentIndex + 1)
+            })
+
+            viewport.addEventListener('scroll', queueIndexUpdate, { passive: true })
+
+            window.addEventListener('resize', () => {
+              currentIndex = clampIndex(currentIndex)
+              scrollToIndex(currentIndex, false)
+            })
+
+            scrollToIndex(0, false)
+            updateButtons()
+          })()
+
+          ;(function () {
+            const marquee = document.querySelector('[data-integrations-marquee]')
+            if (!marquee) {
+              return
+            }
+
+            const track = marquee.querySelector('[data-integrations-track]')
+            const slides = Array.from(track?.children ?? [])
+            if (!track || slides.length < 2) {
+              return
+            }
+
+            const COPIES = 3
+            const clonesFragment = document.createDocumentFragment()
+            for (let copy = 0; copy < COPIES - 1; copy += 1) {
+              slides.forEach((slide) => {
+                clonesFragment.appendChild(slide.cloneNode(true))
+              })
+            }
+
+            track.appendChild(clonesFragment)
+            // Force reflow so scrollWidth accounts for clones
+            track.getBoundingClientRect()
+
+            const updateLoopWidth = () => track.scrollWidth / COPIES
+            let loopWidth = updateLoopWidth()
+            if (!loopWidth || !Number.isFinite(loopWidth)) {
+              return
+            }
+
+            const setInitialScroll = () => {
+              marquee.scrollLeft = loopWidth
+            }
+
+            setInitialScroll()
+
+            let ticking = false
+
+            const normalizeScroll = () => {
+              loopWidth = updateLoopWidth()
+              if (!loopWidth || !Number.isFinite(loopWidth)) {
+                return
+              }
+
+              const lowerBound = loopWidth * 0.35
+              const maxScroll = Math.max(0, track.scrollWidth - marquee.clientWidth)
+              const upperBound = Math.min(
+                loopWidth * (COPIES - 1) + lowerBound,
+                Math.max(maxScroll - lowerBound, lowerBound)
+              )
+
+              if (marquee.scrollLeft <= lowerBound) {
+                marquee.scrollLeft += loopWidth
+              } else if (marquee.scrollLeft >= upperBound) {
+                marquee.scrollLeft -= loopWidth
+              }
+            }
+
+            const handleScroll = () => {
+              if (ticking) {
+                return
+              }
+
+              ticking = true
+              window.requestAnimationFrame(() => {
+                ticking = false
+                normalizeScroll()
+              })
+            }
+
+            marquee.addEventListener('scroll', handleScroll, { passive: true })
+
+            window.addEventListener('resize', () => {
+              loopWidth = updateLoopWidth()
+              if (!loopWidth || !Number.isFinite(loopWidth)) {
+                return
+              }
+
+              setInitialScroll()
+            })
+
+            marquee.dataset.marqueeReady = 'true'
+          })()
+        </script>
       <script>
         ;(function () {
           const roadblockSection = document.querySelector('[data-roadblock-trigger]')
@@ -296,20 +767,148 @@ SEO:
             return
           }
 
-          const WAITLIST_COOKIE = 'radley_waitlist_complete'
+          const WAITLIST_COOKIE = 'radley_waitlist_seen'
           const WAITLIST_COMPLETE_EVENT = 'radley:waitlistComplete'
+          const setCookie = (name, value, days) => {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString()
+            document.cookie = `${name}=${encodeURIComponent(
+              value
+            )}; expires=${expires}; path=/; samesite=Lax`
+          }
+          if (!window.radley) {
+            window.radley = {}
+          }
+          if (!window.radley.waitlist) {
+            window.radley.waitlist = {}
+          }
+          if (!window.radley.waitlist.setCookie) {
+            window.radley.waitlist.setCookie = setCookie
+          }
           const hasWaitlistCookie = document.cookie
             .split('; ')
             .some((entry) => entry.startsWith(`${WAITLIST_COOKIE}=`))
-          let allowAutoOpen = !hasWaitlistCookie
+  let allowAutoOpen = !hasWaitlistCookie
 
           const openButtons = document.querySelectorAll('[data-roadblock-open]')
           const focusableSelectors =
             'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-          let hasAutoOpened = hasWaitlistCookie
-          let focusableElements = []
-          let previouslyFocusedElement = null
-          let sectionObserver = null
+  let hasAutoOpened = hasWaitlistCookie
+  let focusableElements = []
+  let previouslyFocusedElement = null
+  let sectionObserver = null
+  const waitlistEmbed = modal.querySelector('[data-waitlist-embed]')
+  const waitlistFormHost = waitlistEmbed?.querySelector('[data-waitlist-form]')
+  const waitlistLoading = waitlistEmbed?.querySelector('[data-waitlist-loading]')
+  const WAITLIST_LOADER_SRC = 'https://webforms.pipedrive.com/f/loader'
+  let waitlistLoaded = false
+  let waitlistLoadingPromise = null
+
+  const setWaitlistState = (state) => {
+    if (waitlistEmbed) {
+      waitlistEmbed.setAttribute('data-waitlist-state', state)
+    }
+  }
+
+  const loadWaitlistForm = () => {
+    if (waitlistLoaded) {
+      setWaitlistState('ready')
+      return Promise.resolve()
+    }
+
+    if (!waitlistFormHost) {
+      return Promise.resolve()
+    }
+
+    if (waitlistLoadingPromise) {
+      return waitlistLoadingPromise
+    }
+
+    setWaitlistState('loading')
+    if (waitlistLoading) {
+      waitlistLoading.classList.remove('radley-waitlist__loading--error')
+      const message = waitlistLoading.querySelector('span:last-child')
+      if (message) {
+        message.textContent = 'Loading secure waitlist form…'
+      }
+    }
+
+    const handleScriptLoaded = () => {
+      waitlistLoaded = true
+      setWaitlistState('ready')
+      waitlistLoading?.remove()
+    }
+
+    const existingLoader = document.querySelector('script[data-waitlist-loader]')
+    if (existingLoader) {
+      if (existingLoader.dataset.ready === 'true') {
+        handleScriptLoaded()
+        return Promise.resolve()
+      }
+
+      waitlistLoadingPromise = new Promise((resolve, reject) => {
+        existingLoader.addEventListener(
+          'load',
+          () => {
+            existingLoader.dataset.ready = 'true'
+            handleScriptLoaded()
+            resolve()
+          },
+          { once: true }
+        )
+
+        existingLoader.addEventListener(
+          'error',
+          (event) => {
+            setWaitlistState('error')
+            waitlistLoading?.classList.add('radley-waitlist__loading--error')
+            waitlistLoadingPromise = null
+            reject(event)
+          },
+          { once: true }
+        )
+      })
+
+      return waitlistLoadingPromise
+    }
+
+    waitlistLoadingPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = WAITLIST_LOADER_SRC
+      script.async = true
+      script.dataset.waitlistLoader = 'true'
+
+      script.addEventListener(
+        'load',
+        () => {
+          script.dataset.ready = 'true'
+          handleScriptLoaded()
+          resolve()
+        },
+        { once: true }
+      )
+
+      script.addEventListener(
+        'error',
+        (event) => {
+          setWaitlistState('error')
+          if (waitlistLoading) {
+            waitlistLoading.classList.add('radley-waitlist__loading--error')
+            const message = waitlistLoading.querySelector('span:last-child')
+            if (message) {
+              message.textContent = 'Unable to load the waitlist form. Please refresh and try again.'
+            }
+          }
+          waitlistLoadingPromise = null
+          reject(event)
+        },
+        { once: true }
+      )
+
+      waitlistFormHost.appendChild(script)
+    })
+
+    return waitlistLoadingPromise
+  }
 
           window.addEventListener(WAITLIST_COMPLETE_EVENT, () => {
             allowAutoOpen = false
@@ -365,11 +964,25 @@ SEO:
               return
             }
 
-            modal.classList.remove('is-active')
-            modal.setAttribute('aria-hidden', 'true')
-            document.body.classList.remove('radley-roadblock-open')
             document.removeEventListener('keydown', handleKeyDown)
-            previouslyFocusedElement?.focus()
+            modal.classList.remove('is-active')
+            document.body.classList.remove('radley-roadblock-open')
+
+            const activeElement = modal.contains(document.activeElement)
+              ? document.activeElement
+              : null
+            const fallbackFocus =
+              (previouslyFocusedElement && document.contains(previouslyFocusedElement)
+                ? previouslyFocusedElement
+                : openButtons[0]) || roadblockSection?.querySelector('[data-roadblock-open]')
+
+            activeElement?.blur?.()
+            fallbackFocus?.focus?.()
+
+            modal.setAttribute('aria-hidden', 'true')
+            modal.setAttribute('inert', '')
+            previouslyFocusedElement = null
+            setCookie(WAITLIST_COOKIE, '1', 365)
           }
 
           function handleKeyDown(event) {
@@ -386,8 +999,10 @@ SEO:
               return
             }
 
+            loadWaitlistForm()
             previouslyFocusedElement = document.activeElement
             modal.classList.add('is-active')
+            modal.removeAttribute('inert')
             modal.setAttribute('aria-hidden', 'false')
             document.body.classList.add('radley-roadblock-open')
             focusableElements = getFocusableElements()
@@ -400,6 +1015,7 @@ SEO:
           openButtons.forEach((button) => {
             button.addEventListener('click', (event) => {
               event.preventDefault()
+              loadWaitlistForm()
               openModal()
             })
           })
@@ -427,6 +1043,7 @@ SEO:
                 entries.forEach((entry) => {
                   if (entry.isIntersecting) {
                     hasAutoOpened = true
+                    setCookie(WAITLIST_COOKIE, '1', 365)
                     openModal()
                     observerInstance.disconnect()
                   }
@@ -441,15 +1058,19 @@ SEO:
       </script>
       <script>
         ;(function () {
-          const WAITLIST_COOKIE = 'radley_waitlist_complete'
+          const WAITLIST_COOKIE = 'radley_waitlist_seen'
           const WAITLIST_COMPLETE_EVENT = 'radley:waitlistComplete'
-
-          const setCookie = (name, value, days) => {
-            const expires = new Date(Date.now() + days * 864e5).toUTCString()
-            document.cookie = `${name}=${encodeURIComponent(
-              value
-            )}; expires=${expires}; path=/; samesite=Lax`
-          }
+          const setCookie =
+            (window.radley &&
+              window.radley.waitlist &&
+              typeof window.radley.waitlist.setCookie === 'function' &&
+              window.radley.waitlist.setCookie) ||
+            ((name, value, days) => {
+              const expires = new Date(Date.now() + days * 864e5).toUTCString()
+              document.cookie = `${name}=${encodeURIComponent(
+                value
+              )}; expires=${expires}; path=/; samesite=Lax`
+            })
 
           const embedHost = document.querySelector('[data-waitlist-embed]')
           if (!embedHost) {
@@ -492,30 +1113,4 @@ SEO:
     </div>
   </section>
 
-  <section class="radley-section radley-section--soft" id="rppl">
-    <div class="radley-container">
-      <div class="radley-rppl-card">
-        <img
-          src="/assets/images/rppl-big-inverse.svg"
-          alt="rppl"
-          width="160"
-          height="64"
-          class="radley-rppl-card__logo"
-        />
-        <p class="radley-rppl-card__eyebrow">Keen to meet better?</p>
-        <h2 class="radley-rppl-card__headline">Work smarter with <span>rppl</span></h2>
-        <p class="radley-rppl-card__body">
-          Try
-          <a class="radley-rppl-card__link" href="https://rppl.app/" target="_blank" rel="noopener"
-            >rppl</a
-          >
-          to streamline collaboration, run sharper meetings, and keep projects moving.
-        </p>
-        <a class="radley-rppl-card__cta" href="https://rppl.app/" target="_blank" rel="noopener">
-          Try rppl
-        </a>
-        <p class="radley-rppl-card__fineprint">*Terms &amp; conditions apply</p>
-      </div>
-    </div>
-  </section>
 </div>

@@ -1,1 +1,43 @@
-<!-- No inline scripts currently required. -->
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.radley-hero__animation').forEach((container) => {
+      const player = container.querySelector('dotlottie-wc')
+      const fallback = container.querySelector('[data-lottie-fallback]')
+      if (!player || !fallback) {
+        return
+      }
+
+      const showFallback = () => {
+        fallback.removeAttribute('hidden')
+      }
+
+      const hideFallback = () => {
+        fallback.setAttribute('hidden', '')
+      }
+
+      showFallback()
+
+      const markReady = () => {
+        hideFallback()
+        player.removeEventListener('ready', markReady)
+        player.removeEventListener('load', markReady)
+        player.removeEventListener('dotlottie_load', markReady)
+      }
+
+      player.addEventListener('ready', markReady, { once: true })
+      player.addEventListener('load', markReady, { once: true })
+      player.addEventListener('dotlottie_load', markReady, { once: true })
+
+      player.addEventListener('error', showFallback, { once: true })
+      player.addEventListener('dotlottie_error', showFallback, { once: true })
+      player.shadowRoot?.addEventListener?.('error', showFallback, { once: true })
+
+      requestAnimationFrame(() => {
+        if (player.shadowRoot?.querySelector('canvas')) {
+          markReady()
+        }
+      })
+    })
+  })
+</script>

@@ -3,7 +3,7 @@
   "private": true,
   "description": "Rppl marketing site built with Jekyll",
   "scripts": {
-  "jekyll": "LIVERELOAD_PORT=${LIVERELOAD_PORT:-35731}; BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --config site/_config.yml --port 6060 --trace --unpublished --livereload --livereload-port $LIVERELOAD_PORT",
+    "jekyll": "LIVERELOAD_PORT=${LIVERELOAD_PORT:-35731}; BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --config site/_config.yml --port 6060 --trace --unpublished --livereload --livereload-port $LIVERELOAD_PORT",
     "start": "npm run jekyll",
     "build": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site --config 'site/_config.yml' --destination _site"
   },
@@ -15,16 +15,5 @@
   "bugs": {
     "url": "https://github.com/rppl-app/marketing-site/issues"
   },
-  "homepage": "https://github.com/rppl-app/marketing-site#readme",
-  "dependencies": {
-    "@planet/react-globe": "^2.0.2",
-    "esbuild": "^0.25.10",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "styled-components": "^6.1.19"
-  },
-  "overrides": {
-    "d3-color": "^3.1.0",
-    "d3-interpolate": "^3.0.1"
-  }
+  "homepage": "https://github.com/rppl-app/marketing-site#readme"
 }

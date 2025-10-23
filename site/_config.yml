@@ -8,6 +8,7 @@ data_dir: _website_settings
 collections_dir: collections
 uploads_dir: '/images/uploads/:title'
 lang: en
+cache_dir: .jekyll-cache-build
 
 plugins:
   - jekyll-include-cache

@@ -1,5 +1,4 @@
-{% assign c = 'c-navigation' %} {% assign baseurl = site.baseurl | default: '' %} {% assign
-waitlist_url = baseurl | append: '/#join' %}
+{% assign c = 'c-navigation' %} {% assign baseurl = site.baseurl | default: '' %}
 
 <!-- This is for small screens—to open a side menu that slides in. -->
 <div class="{{c}}__mobile{% if page.url == '/' %} {{c}}__mobile--inverse{% endif %}">
@@ -50,16 +49,10 @@ waitlist_url = baseurl | append: '/#join' %}
           <a class="{{c}}__nav-link" href="{{ baseurl }}/#problem">Problem</a>
         </li>
         <li>
-          <a class="{{c}}__nav-link" href="{{ baseurl }}/#difference">Radley Difference</a>
-        </li>
-        <li>
-          <a class="{{c}}__nav-link" href="{{ baseurl }}/#how-it-works">How It Works</a>
+          <a class="{{c}}__nav-link" href="{{ baseurl }}/#how-it-works-heading">How Radley Works</a>
         </li>
         <li>
           <a class="{{c}}__nav-link" href="{{ baseurl }}/#team">Team</a>
-        </li>
-        <li>
-          <a class="{{c}}__nav-link" href="{{ baseurl }}/#about">About</a>
         </li>
       </ul>
     </div>
@@ -150,6 +143,16 @@ waitlist_url = baseurl | append: '/#join' %}
       closeNavigation()
     }
   })
+
+  navList
+    ?.querySelectorAll('a')
+    .forEach((link) => {
+      link.addEventListener('click', () => {
+        if (isNavOpen) {
+          closeNavigation()
+        }
+      })
+    })
 
   window.addEventListener('scroll', toggleScrolledState)
   window.addEventListener('load', toggleScrolledState)

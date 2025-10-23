@@ -74,6 +74,7 @@ _site
 .jekyll-cache/
 .sass-cache/
 site/_site/
+site/.jekyll-cache-build/
 
 # Next.js build output
 .next/
