@@ -6,6 +6,7 @@
 - `build.sh` – reproducible build helper that installs Ruby/Node deps and runs the production Jekyll build.
 - `firebase.json` – Firebase Hosting & Functions configuration (deploy destinations, headers, rewrites).
 - `_site/` – generated output; removed from source control and rebuilt on demand via `npm run build`.
+- `site/assets/favicon/` – favicon bundle (ICO, PNG, SVG, manifest) referenced in the HTML head.
 
 ### Development Workflow
 1. Install Node packages: `npm install`
@@ -15,3 +16,6 @@
 ### Building & Deploying
 1. Production build (outputs to `_site/`): `npm run build`
 2. Deploy to Firebase Hosting: `firebase deploy --only hosting`
+
+> **Tip:** never run the build or deploy scripts with `sudo`. If earlier runs produced root-owned artifacts, fix them with  
+> `sudo chown -R "$USER":"$(id -gn)" _site site/.jekyll-cache site/vendor` before rebuilding.

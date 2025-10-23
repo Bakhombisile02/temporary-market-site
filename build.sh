@@ -45,6 +45,6 @@ BUNDLE_GEMFILE="${REPO_ROOT}/site/Gemfile" bundle install --jobs=4 --retry=3
 npm install
 
 # Build the static site into ./_site using the project npm script.
-rm -rf "${REPO_ROOT}/site/.jekyll-cache-build"
-npm run build
+export JEKYLL_CACHE_DIR="${REPO_ROOT}/site/.jekyll-cache-build"
+rm -rf "${JEKYLL_CACHE_DIR}"
 npm run build
