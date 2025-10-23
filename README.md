@@ -1,4 +1,4 @@
-## Rppl Marketing Site
+## Radley Marketing Site
 
 ### Repository Layout
 - `site/` – primary Jekyll source (layouts, includes, Sass, page collections).
